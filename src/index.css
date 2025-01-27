@@ -1,6 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Canva Sans Bold and Italic */
+@font-face {
+  font-family: 'Canva Sans';
+  src: url('./assets/fonts/CanvaSans-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Canva Sans';
+  src: url('./assets/fonts/CanvaSans-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Gordita Font */
+@font-face {
+  font-family: 'Gordita';
+  src: url('./assets/fonts/Gordita-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gordita';
+  src: url('./assets/fonts/Gordita-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
 
 .styled-select {
   appearance: none;
