@@ -8,7 +8,7 @@ import { IoIosNotifications } from "react-icons/io";
 
 const Header = () => {
     return (
-        <div className='flex justify-between items-center py-4 px-20'>
+        <div className='flex justify-between items-center py-4 px-14'>
             <div className='w-40'>
                 <img src={logoImg} alt="" className=' object-contain' />
             </div>
