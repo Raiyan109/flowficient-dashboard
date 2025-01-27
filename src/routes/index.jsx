@@ -8,19 +8,15 @@ import UserDetails1 from "../pages/Auth/UserDetails1";
 import UserDetails2 from "../pages/Auth/UserDetails2";
 import OTP from "../pages/Auth/OTP";
 import UserDetailsUpdate from "../pages/Auth/UserDetailsUpdate";
+import { routesGenerators } from "../utils/routesGenerators";
+import { dashboardItems } from "../constants/router.constants";
 
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Main />,
-        children: [
-            {
-                path: "/",
-                element: <Signin />,
-            },
-        ]
-        // children: routesGenerators(dashboardItems),
+        children: routesGenerators(dashboardItems),
     },
     //   {
     //     path: "/support-chat",
