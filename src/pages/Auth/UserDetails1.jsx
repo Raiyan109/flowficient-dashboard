@@ -119,10 +119,11 @@ const UserDetails1 = () => {
                                 <option value="option3">Option 3</option>
                             </select>
                         </div>
-                        <button className="bg-black text-white font-gordita text-xs rounded-lg h-9 w-full">
-                            Next
-                        </button>
-
+                        <Link to='/auth/user-details-2' className="block">
+                            <button className="bg-black text-white font-gordita text-xs rounded-lg h-9 w-full">
+                                Next
+                            </button>
+                        </Link>
                     </form>
                     <div className="flex flex-col items-center justify-center text-sm">
                         <h1 className="text-[#515151] text-center font-canvasans">By signing up you agree to the   <Link to='/auth/sign-up' className="text-[#8c52ff] font-bold">Terms and Conditions.</Link></h1>
