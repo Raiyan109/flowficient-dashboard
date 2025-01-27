@@ -12,6 +12,9 @@ export default {
         canvasans: ['Canva Sans', ...defaultTheme.fontFamily.sans],
         gordita: ['Gordita', ...defaultTheme.fontFamily.sans],
       },
+      colors: {
+        formBorder: '#e3dddd'
+      }
     },
   },
   plugins: [],
