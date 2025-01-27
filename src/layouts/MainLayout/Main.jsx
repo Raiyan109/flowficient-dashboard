@@ -23,7 +23,7 @@ const Main = () => {
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
         }}>
-            <div className="absolute inset-0 bg-gradient-to-b from-[#dcd9d9] to-[#f0f0f0] opacity-10 z-0" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#e0e0e0] to-[#bdbdbd] opacity-20 z-0" />
             <div className={`w-full z-10 transition-all ${isScrolled
                 ? "sticky top-0 bg-white shadow-md p-0"
                 : "sticky top-0 bg-transparent p-[24px]"
@@ -34,9 +34,9 @@ const Main = () => {
                 <div className="relative z-10">
                     <Sidebar />
                 </div>
-                <div className="flex-1 pl-[326px]">
+                <div className="flex-1 pl-3">
 
-                    <div className="p-[24px] pt-0.5 bg-pink-400">
+                    <div className="p-[24px] pt-0.5">
                         <Outlet />
                     </div>
                 </div>
