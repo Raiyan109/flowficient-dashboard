@@ -4,6 +4,8 @@ import AuthLayout from "../layouts/AuthLayout/AuthLayout";
 import Signin from "../pages/Auth/Signin";
 import Signup from "../pages/Auth/Signup";
 import Main from "../layouts/MainLayout/Main";
+import UserDetails1 from "../pages/Auth/UserDetails1";
+import UserDetails2 from "../pages/Auth/UserDetails2";
 
 
 const router = createBrowserRouter([
@@ -41,6 +43,14 @@ const router = createBrowserRouter([
             {
                 path: "/auth/sign-up",
                 element: <Signup />,
+            },
+            {
+                path: "/auth/user-details-1",
+                element: <UserDetails1 />,
+            },
+            {
+                path: "/auth/user-details-2",
+                element: <UserDetails2 />,
             },
             // {
             //     path: "/auth/forgot-password",

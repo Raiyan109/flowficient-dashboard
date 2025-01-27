@@ -50,9 +50,11 @@ const Signup = () => {
                                 <label className="font-canvasans text-xs font-extralight">Confirm Password</label>
                                 <input type="text" className="border-none outline-none bg-[#f3f3f3] rounded-xl h-9 px-3" />
                             </div>
-                            <button className="bg-black text-white font-gordita text-xs rounded-lg h-9 w-full">
-                                Sign Up
-                            </button>
+                            <Link to='/auth/user-details-1' className="block">
+                                <button className="bg-black text-white font-gordita text-xs rounded-lg h-9 w-full">
+                                    Sign Up
+                                </button>
+                            </Link>
 
                         </form>
                         <h1 className="text-[#515151] text-center font-canvasans">Already have an account? <Link to='/auth/sign-in' className="text-[#8c52ff] font-bold">Sign In</Link></h1>
