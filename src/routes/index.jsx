@@ -6,6 +6,8 @@ import Signup from "../pages/Auth/Signup";
 import Main from "../layouts/MainLayout/Main";
 import UserDetails1 from "../pages/Auth/UserDetails1";
 import UserDetails2 from "../pages/Auth/UserDetails2";
+import OTP from "../pages/Auth/OTP";
+import UserDetailsUpdate from "../pages/Auth/UserDetailsUpdate";
 
 
 const router = createBrowserRouter([
@@ -51,6 +53,18 @@ const router = createBrowserRouter([
             {
                 path: "/auth/user-details-2",
                 element: <UserDetails2 />,
+            },
+            {
+                path: "/auth/user-details-2",
+                element: <UserDetails2 />,
+            },
+            {
+                path: "/auth/user-details-update",
+                element: <UserDetailsUpdate />,
+            },
+            {
+                path: "/auth/otp",
+                element: <OTP />,
             },
             // {
             //     path: "/auth/forgot-password",
