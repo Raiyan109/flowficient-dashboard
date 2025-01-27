@@ -55,7 +55,7 @@ const Signup = () => {
                             </button>
 
                         </form>
-                        <h1 className="text-[#515151] text-center font-canvasans">Don't have an account? <Link to='/sign-up' className="text-[#8c52ff] font-bold">Sign Up</Link></h1>
+                        <h1 className="text-[#515151] text-center font-canvasans">Already have an account? <Link to='/auth/sign-in' className="text-[#8c52ff] font-bold">Sign In</Link></h1>
                     </div>
                 </div>
                 <div className="flex-1 relative pt-20">
