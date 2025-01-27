@@ -2,7 +2,7 @@
 
 const Sidebar = () => {
     return (
-        <div>
+        <div className="bg-blue-300">
             Sidebar
         </div>
     )

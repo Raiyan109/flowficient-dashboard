@@ -3,7 +3,7 @@ import Header from "./Header"
 import Sidebar from "./Sidebar"
 import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
-import bgSvg from '../../assets/bgHome.svg'
+import bgSvg from '../../assets/bg2.svg'
 
 const Main = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -17,25 +17,28 @@ const Main = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
     return (
-        <div className="flex text-start bg-white min-h-screen h-screen w-screen  relative" style={{
+        <div className="flex flex-col text-start bg-white  h-screen w-screen relative" style={{
             backgroundImage: `url(${bgSvg})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
         }}>
-            <div className="absolute inset-0 bg-gradient-to-b from-white to-[#f5f5f5] opacity-50 z-0" />
-            <div className="relative z-10">
-                <Sidebar />
+            <div className="absolute inset-0 bg-gradient-to-b from-white to-[#f5f5f5] opacity-10 z-0" />
+            <div className={`w-full z-10 transition-all ${isScrolled
+                ? "sticky top-0 bg-white shadow-md p-0"
+                : "sticky top-0 bg-transparent p-[24px]"
+                }`}>
+                <Header />
             </div>
-            <div className="flex-1 pl-[326px] ">
-                <div className={`w-full z-10 transition-all ${isScrolled
-                    ? "sticky top-0 bg-white shadow-md p-0"
-                    : "sticky top-0 bg-transparent p-[24px]"
-                    }`}>
-                    <Header />
+            <div className="flex">
+                <div className="relative z-10">
+                    <Sidebar />
                 </div>
-                <div className="p-[24px] pt-0.5">
-                    <Outlet />
+                <div className="flex-1 pl-[326px]">
+
+                    <div className="p-[24px] pt-0.5 bg-pink-400">
+                        <Outlet />
+                    </div>
                 </div>
             </div>
         </div>

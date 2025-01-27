@@ -1,9 +1,11 @@
-
+import logoImg from '../../assets/logo.png'
 
 const Header = () => {
     return (
-        <div>
-            Header
+        <div className='bg-zinc-400'>
+            <div>
+                <img src={logoImg} alt="" />
+            </div>
         </div>
     )
 }
