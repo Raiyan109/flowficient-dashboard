@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom"
+import logoImg from '../../assets/logo.png'
 
 
 const Signup = () => {
@@ -14,7 +15,9 @@ const Signup = () => {
                 <div className="flex-1 flex flex-col items-center justify-center">
                     <div className="bg-white border border-formBorder rounded-2xl pt-5 pb-14 px-7">
                         {/* Logo */}
-
+                        <div className="w-28 pt-1 pb-5">
+                            <img src={logoImg} alt="" className='8 object-contain block' />
+                        </div>
 
                         <div className="space-y-2">
                             <h1 className="font-canvasans font-bold text-lg">Get Started</h1>
