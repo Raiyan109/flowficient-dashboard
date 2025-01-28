@@ -1,9 +1,9 @@
-import flowkiAiLogo from '../../assets/flowki-logo.png'
-import flowkiAiCalendar from '../../assets/flowki-calendar.png'
+import React, { useState } from 'react';
+import flowkiAiLogo from '../../assets/flowki-logo.png';
+import flowkiAiCalendar from '../../assets/flowki-calendar.png';
 import { FaArrowUp } from "react-icons/fa6";
-import { useState } from 'react';
 
-const chats = [
+const initialChats = [
     {
         id: 1,
         image: flowkiAiCalendar,
@@ -44,7 +44,7 @@ const chats = [
         image: flowkiAiCalendar,
         text: 'Delay my next appointment bx mins'
     },
-]
+];
 
 const FlowkiAiModal = ({ toggleNotifications }) => {
     const [isChatStarted, setIsChatStarted] = useState(false); // State to track if chat has started
@@ -72,6 +72,7 @@ const FlowkiAiModal = ({ toggleNotifications }) => {
             setIsChatStarted(true); // Set chat as started
         }
     };
+
     return (
         <div
             className="fixed top-10 right-6 h-[757.3px] w-[651.9px] rounded-[33px] z-50 flex flex-col justify-between"
@@ -84,34 +85,66 @@ const FlowkiAiModal = ({ toggleNotifications }) => {
                 <h1 className='font-gordita text-[20px] font-bold'>Chat with FlowKi AI</h1>
             </div>
 
-            <div className='flex flex-col items-center justify-center pb-[22px]'>
-                <div className='flex items-center flex-wrap justify-center gap-[19px] flex-grow'>
-                    {chats.map((chat) => (
-                        <div key={chat.id} className='bg-[#efefef] rounded-[38px] h-[41.8px] w-[267.2px] py-[12px] px-[21px] flex items-center gap-[13px]'>
-                            <img src={chat.image} alt="" />
-                            <h1 className='font-gordita text-[11.2px]'>{chat.text}</h1>
-                        </div>
-                    ))}
-                </div>
+            <div className='flex flex-col items-center justify-center pb-[22px] relative'>
+                {/* Render initial chat options or chat history based on state */}
+                {!isChatStarted ? (
+                    <div className='flex items-center flex-wrap justify-center gap-[19px] flex-grow'>
+                        {initialChats.map((chat) => (
+                            <div key={chat.id} className='bg-[#efefef] rounded-[38px] h-[41.8px] w-[267.2px] py-[12px] px-[21px] flex items-center gap-[13px]'>
+                                <img src={chat.image} alt="" />
+                                <h1 className='font-gordita text-[11.2px]'>{chat.text}</h1>
+                            </div>
+                        ))}
+                    </div>
+                ) : (
+                    <div className='w-full h-[500px] overflow-y-auto px-4'>
+                        {chatHistory.map((chat) => (
+                            <div
+                                key={chat.id}
+                                className={`flex ${chat.type === 'user' ? 'justify-start' : 'justify-end'} mb-4`}
+                            >
+                                <div
+                                    className={`max-w-[313px]  p-3 rounded-lg font-gordita ${chat.type === 'user'
+                                        ? 'bg-[#efefef] text-black'
+                                        : 'text-white'
+                                        }`}
+                                    style={{
+                                        background: chat.type === 'bot'
+                                            ? 'radial-gradient(circle at 0% 0%, #5170ff, #d83bff)'
+                                            : undefined, // Use undefined to avoid overriding the className background
+                                    }}
+                                >
+                                    {chat.text}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                )}
 
                 {/* Input */}
-                <div className="relative  p-4 w-[594.9px]">
+                <div className="fixed bottom-28 p-4 w-[594.9px]">
                     <label htmlFor="Search" className="sr-only"> Search </label>
 
                     <input
                         type="text"
                         id="Search"
                         placeholder="Let's chat"
+                        value={userInput}
+                        onChange={(e) => setUserInput(e.target.value)}
+                        onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
                         className="w-full border-gray-200 px-[25px] py-[17px] placeholder:font-canvasans placeholder:text-[#aaaaaa] placeholder:text-[11.7px] rounded-full"
                     />
 
-                    <span className="absolute right-7 top-7 inset-y-0  grid place-content-center bg-black h-[34.3px] w-[34.3px] rounded-full">
+                    <span
+                        className="absolute right-7 top-7 inset-y-0 grid place-content-center bg-black h-[34.3px] w-[34.3px] rounded-full cursor-pointer"
+                        onClick={handleSendMessage}
+                    >
                         <FaArrowUp color='white' />
                     </span>
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default FlowkiAiModal
+export default FlowkiAiModal;
