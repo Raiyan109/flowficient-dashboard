@@ -3,10 +3,12 @@ import arrowImg from '../../../assets/expand-diagonal-line.png'
 import chatImg from '../../../assets/chats.png'
 import messagesImg from '../../../assets/messages-white.png'
 import calendarImg from '../../../assets/Calendar.png'
+import automationsImg from '../../../assets/Automations.png'
+import whiteAutomationsImg from '../../../assets/white-automation.png'
 
 const DashboardHome = () => {
     return (
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-9 pt-10">
             <div className=" h-[600px] rounded-2xl w-[400px]" style={{
                 backgroundColor: 'rgba(240, 240, 240, 0.6)', // Whitish and semi-transparent
                 backdropFilter: 'blur(10px)', // Frosted glass effect
@@ -74,23 +76,51 @@ const DashboardHome = () => {
                 </div>
             </div>
             <div className="h-[600px] rounded-2xl w-[400px]"
-                style={{
-                    backgroundColor: 'rgba(255, 255, 255, 0.6)', // Whitish and semi-transparent
-                    backdropFilter: 'blur(10px)', // Frosted glass effect
-                    WebkitBackdropFilter: 'blur(10px)', // Safari support
-                }}
+
             >
-                <div className=" flex justify-between items-center p-6">
-                    <h1 className="text-4xl font-canvasans font-bold">Chats</h1>
-                    <div className="flex items-center gap-4">
-                        <div className="flex items-center gap-2">
-                            <div className="rounded-md px-2 bg-white font-canvasans font-semibold">0</div>
-                            <div className="rounded-md px-2 bg-black text-white font-canvasans font-semibold">0</div>
+                <div className="ml-10">
+                    <h1 className="text-4xl font-canvasans font-bold mb-10">Quick Actions</h1>
+                    <div style={{
+                        background: 'radial-gradient(circle at 0% 0%, #5170ff, #d83bff)',
+                    }} className="py-3 px-4 rounded-2xl space-y-1.5 mb-5">
+                        <div className="flex justify-between">
+                            <h1 className="text-white font-canvasans text-sm font-semibold">Cancel my next appointment</h1>
+                            <div className="bg-white p-[2px]  rounded-2xl ">
+                                <img src={automationsImg} alt="" className="w-3.5" />
+                            </div>
                         </div>
-                        <div className="border border-[#b9b9b9] p-1 rounded-full">
-                            {/* <BsArrowsAngleExpand className="text-[#b9b9b9] text-xl" /> */}
-                            <img src={arrowImg} alt="" />
+                        <h1 className="text-white font-canvasans text-xs font-thin">Sends  a Whatsapp to the patient who’s scheduled to come in next to inform them.</h1>
+                        <p className="text-white flex justify-end text-[10px]">Saves 10 mins</p>
+                    </div>
+                    <div className="py-3 px-4 rounded-2xl space-y-1.5 bg-[#f1f1f1] mb-5">
+                        <div className="flex justify-between">
+                            <h1 className=" font-canvasans text-sm font-semibold">Cancel my next appointment</h1>
+                            <div className="bg-black p-1  rounded-full flex items-center justify-center">
+                                <img src={whiteAutomationsImg} alt="" className="w-3 h-3" />
+                            </div>
                         </div>
+                        <h1 className=" font-canvasans text-xs font-thin">Sends  a Whatsapp to the patient who’s scheduled to come in next to inform them.</h1>
+                        <p className="text-[#757575] flex justify-end text-[10px]">Saves 10 mins</p>
+                    </div>
+                    <div className="py-3 px-4 rounded-2xl space-y-1.5 bg-[#f1f1f1] mb-5">
+                        <div className="flex justify-between">
+                            <h1 className=" font-canvasans text-sm font-semibold">Cancel my next appointment</h1>
+                            <div className="bg-black p-1  rounded-full flex items-center justify-center">
+                                <img src={whiteAutomationsImg} alt="" className="w-3 h-3" />
+                            </div>
+                        </div>
+                        <h1 className=" font-canvasans text-xs font-thin">Sends  a Whatsapp to the patient who’s scheduled to come in next to inform them.</h1>
+                        <p className="text-[#757575] flex justify-end text-[10px]">Saves 10 mins</p>
+                    </div>
+                    <div className="py-3 px-4 rounded-2xl space-y-1.5 bg-[#f1f1f1] mb-5">
+                        <div className="flex justify-between">
+                            <h1 className=" font-canvasans text-sm font-semibold">Cancel my next appointment</h1>
+                            <div className="bg-black p-1  rounded-full flex items-center justify-center">
+                                <img src={whiteAutomationsImg} alt="" className="w-3 h-3" />
+                            </div>
+                        </div>
+                        <h1 className=" font-canvasans text-xs font-thin">Sends  a Whatsapp to the patient who’s scheduled to come in next to inform them.</h1>
+                        <p className="text-[#757575] flex justify-end text-[10px]">Saves 10 mins</p>
                     </div>
                 </div>
             </div>

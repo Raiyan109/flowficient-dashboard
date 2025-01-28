@@ -34,7 +34,7 @@ const Main = () => {
                 <div className="relative z-10">
                     <Sidebar />
                 </div>
-                <div className="flex-1 pl-3">
+                <div className="flex-1 pl-10">
 
                     <div className="p-[24px] pt-0.5">
                         <Outlet />
