@@ -23,6 +23,11 @@ import { CiDumbbell } from "react-icons/ci";
 
 import { PiHandbagSimple } from "react-icons/pi";
 import DashboardHome from "../pages/Main/DashboardHome/DashboardHome";
+import Bookings from "../pages/Main/DashboardHome/Bookings";
+import Patients from "../pages/Main/DashboardHome/Patients";
+import Automations from "../pages/Main/DashboardHome/Automations";
+import Knowledgebase from "../pages/Main/DashboardHome/Knowledgebase";
+import Settings from "../pages/Main/DashboardHome/Settings";
 
 
 export const dashboardItems = [
@@ -32,12 +37,36 @@ export const dashboardItems = [
         icon: RiDashboardHorizontalFill,
         element: <DashboardHome />,
     },
-    //   {
-    //     name: "Earnings",
-    //     path: "earnings",
-    //     icon: TbCoin,
-    //     element: <Earnings />,
-    //   },
+    {
+        name: "Patients",
+        path: "patients",
+        icon: TbCoin,
+        element: <Patients />,
+    },
+    {
+        name: "Bookings",
+        path: "bookings",
+        icon: TbCoin,
+        element: <Bookings />,
+    },
+    {
+        name: "Automations",
+        path: "automations",
+        icon: TbCoin,
+        element: <Automations />,
+    },
+    {
+        name: "Knowledgebase",
+        path: "knowledgebase",
+        icon: TbCoin,
+        element: <Knowledgebase />,
+    },
+    {
+        name: "Settings",
+        path: "settings",
+        icon: TbCoin,
+        element: <Settings />,
+    },
     //   {
     //     name: "Users",
     //     path: "users",

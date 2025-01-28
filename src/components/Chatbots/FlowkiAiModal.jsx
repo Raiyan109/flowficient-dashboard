@@ -1,6 +1,7 @@
 import flowkiAiLogo from '../../assets/flowki-logo.png'
 import flowkiAiCalendar from '../../assets/flowki-calendar.png'
 import { FaArrowUp } from "react-icons/fa6";
+import { useState } from 'react';
 
 const chats = [
     {
@@ -46,11 +47,36 @@ const chats = [
 ]
 
 const FlowkiAiModal = ({ toggleNotifications }) => {
+    const [isChatStarted, setIsChatStarted] = useState(false); // State to track if chat has started
+    const [userInput, setUserInput] = useState(''); // State to store user input
+    const [chatHistory, setChatHistory] = useState([]); // State to store chat history
+
+    // Function to handle user input submission
+    const handleSendMessage = () => {
+        if (userInput.trim()) {
+            // Add user message to chat history
+            setChatHistory(prev => [
+                ...prev,
+                { id: prev.length + 1, type: 'user', text: userInput }
+            ]);
+
+            // Simulate a bot response after a delay
+            setTimeout(() => {
+                setChatHistory(prev => [
+                    ...prev,
+                    { id: prev.length + 1, type: 'bot', text: 'This is a mock response from FlowKi AI.' }
+                ]);
+            }, 1000);
+
+            setUserInput(''); // Clear input field
+            setIsChatStarted(true); // Set chat as started
+        }
+    };
     return (
         <div
             className="fixed top-10 right-6 h-[757.3px] w-[651.9px] rounded-[33px] z-50 flex flex-col justify-between"
             style={{
-                background: 'linear-gradient(135deg, #F3F3F3,#FEECFE)', // Linear gradient background
+                background: 'linear-gradient(225deg, #F3F3F3, #FEECFE)', // Linear gradient background
             }}
         >
             <div className='flex justify-center items-center flex-col gap-[24px] pt-[87px]'>
