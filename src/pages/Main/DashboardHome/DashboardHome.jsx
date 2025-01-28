@@ -124,7 +124,7 @@ const bookings = [
 
 const DashboardHome = () => {
     return (
-        <div className="flex items-center gap-9 pt-10">
+        <div className="flex items-center gap-5 pt-10">
             <div className=" h-[600px] rounded-2xl w-full" style={{
                 backgroundColor: 'rgba(240, 240, 240, 0.6)', // Whitish and semi-transparent
                 backdropFilter: 'blur(10px)', // Frosted glass effect
@@ -269,7 +269,7 @@ const DashboardHome = () => {
             <div className="h-[600px] rounded-2xl w-full"
 
             >
-                <div className="ml-10">
+                <div className="mr-3">
                     <h1 className="text-4xl font-canvasans font-bold mb-10">Quick Actions</h1>
                     <div style={{
                         background: 'radial-gradient(circle at 0% 0%, #5170ff, #d83bff)',

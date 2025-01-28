@@ -17,12 +17,12 @@ const Header = () => {
         setShowNotifications(!showNotifications);
     };
     return (
-        <div className='flex justify-between items-center py-4 px-14 mx-auto max-w-[1280px]'>
-            <div className='w-40'>
+        <div className='flex justify-between items-center py-4 px-4 mx-auto max-w-[1300px]'>
+            <div className='w-36'>
                 <img src={logoImg} alt="" className=' object-contain' />
             </div>
             <div>
-                <div className="relative bg-black rounded-md w-[800px]">
+                <div className="relative bg-black rounded-md w-[550px]">
                     <label htmlFor="Search" className="sr-only"> Search </label>
                     <span className="absolute inset-y-0 start-1 grid w-10 place-content-center">
                         <img src={spark} alt="" />

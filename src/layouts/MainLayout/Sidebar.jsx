@@ -7,7 +7,7 @@ import settings from '../../assets/Settings.png'
 
 const Sidebar = () => {
     return (
-        <div className="flex flex-col items-center justify-start gap-3.5 h-screen w-48 pt-10">
+        <div className="flex flex-col items-center justify-start gap-3.5 h-screen w-28 pt-10">
             <div className='bg-[#f1f1f1] rounded-full p-2'>
                 <img src={messages} alt="" />
             </div>
