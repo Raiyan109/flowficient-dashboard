@@ -266,15 +266,22 @@ const DashboardHome = () => {
                         <h1 className="text-white font-canvasans text-xs font-thin">Sends  a Whatsapp to the patient who’s scheduled to come in next to inform them.</h1>
                         <p className="text-white flex justify-end text-[10px]">Saves 10 mins</p>
                     </div>
-                    <div className="py-3 px-4 rounded-2xl space-y-1.5 bg-[#f1f1f1] mb-5">
+                    <div
+                        className="py-3 px-4 rounded-2xl space-y-1.5 mb-5"
+                        style={{
+                            background: "linear-gradient(90deg, #ff66c4, #ffde59)",
+                        }}
+                    >
                         <div className="flex justify-between">
-                            <h1 className=" font-canvasans text-sm font-semibold">Cancel my next appointment</h1>
-                            <div className="bg-black p-1  rounded-full flex items-center justify-center">
+                            <h1 className="font-canvasans text-sm font-semibold text-white">Cancel my next appointment</h1>
+                            <div className="bg-black p-1 rounded-full flex items-center justify-center">
                                 <img src={whiteAutomationsImg} alt="" className="w-3 h-3" />
                             </div>
                         </div>
-                        <h1 className=" font-canvasans text-xs font-thin">Sends  a Whatsapp to the patient who’s scheduled to come in next to inform them.</h1>
-                        <p className="text-[#757575] flex justify-end text-[10px]">Saves 10 mins</p>
+                        <h1 className="font-canvasans text-xs font-thin text-white">
+                            Sends a Whatsapp to the patient who’s scheduled to come in next to inform them.
+                        </h1>
+                        <p className="text-white flex justify-end text-[10px]">Saves 10 mins</p>
                     </div>
                     <div className="py-3 px-4 rounded-2xl space-y-1.5 bg-[#f1f1f1] mb-5">
                         <div className="flex justify-between">
