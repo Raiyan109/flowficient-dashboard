@@ -125,7 +125,7 @@ const bookings = [
 const DashboardHome = () => {
     return (
         <div className="flex items-center gap-9 pt-10">
-            <div className=" h-[600px] rounded-2xl w-[400px]" style={{
+            <div className=" h-[600px] rounded-2xl w-full" style={{
                 backgroundColor: 'rgba(240, 240, 240, 0.6)', // Whitish and semi-transparent
                 backdropFilter: 'blur(10px)', // Frosted glass effect
                 WebkitBackdropFilter: 'blur(10px)', // Safari support
@@ -182,7 +182,7 @@ const DashboardHome = () => {
                 )}
 
             </div>
-            <div className=" h-[600px] rounded-2xl  w-[400px]" style={{
+            <div className=" h-[600px] rounded-2xl  w-full" style={{
                 backgroundColor: 'rgba(240, 240, 240, 0.6)', // Whitish and semi-transparent
                 backdropFilter: 'blur(10px)', // Frosted glass effect
                 WebkitBackdropFilter: 'blur(10px)', // Safari support
@@ -266,7 +266,7 @@ const DashboardHome = () => {
             </div>
 
             {/* Quick actions */}
-            <div className="h-[600px] rounded-2xl w-[400px]"
+            <div className="h-[600px] rounded-2xl w-full"
 
             >
                 <div className="ml-10">

@@ -9,7 +9,7 @@ import { IoCloseOutline } from "react-icons/io5";
 const DashboardNotification = ({ toggleNotifications }) => {
     return (
         <div
-            className="fixed top-10 right-10 h-[600px] w-[400px] rounded-2xl z-50 bg-[#fafafa]"
+            className="fixed top-9 right-10 h-[700px] w-[400px] rounded-3xl z-50 bg-[#fafafa]"
         // style={{
         //     backgroundColor: 'rgba(240, 240, 240, 0.6)', // Whitish and semi-transparent
         //     // backdropFilter: 'blur(10px)', // Frosted glass effect

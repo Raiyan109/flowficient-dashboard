@@ -17,7 +17,7 @@ const Header = () => {
         setShowNotifications(!showNotifications);
     };
     return (
-        <div className='flex justify-between items-center py-4 px-14'>
+        <div className='flex justify-between items-center py-4 px-14 mx-auto max-w-[1280px]'>
             <div className='w-40'>
                 <img src={logoImg} alt="" className=' object-contain' />
             </div>

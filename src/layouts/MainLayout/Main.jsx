@@ -36,7 +36,7 @@ const Main = () => {
                 </div>
                 <div className="flex-1 pl-10">
 
-                    <div className="p-[24px] pt-0.5">
+                    <div className="p-[24px] pt-0.5 mx-auto max-w-[1280px]">
                         <Outlet />
                     </div>
                 </div>
