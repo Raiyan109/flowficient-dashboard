@@ -5,8 +5,17 @@ import { FaRegCircle } from "react-icons/fa6";
 import { GoPersonFill } from "react-icons/go";
 import { MdElectricBolt } from "react-icons/md";
 import { IoIosNotifications } from "react-icons/io";
+import { useState } from 'react';
+import { FaExclamation } from "react-icons/fa6";
+import { IoCloseOutline } from "react-icons/io5";
+import DashboardNotification from '../../components/Notifications/DashboardNotification';
 
 const Header = () => {
+    const [showNotifications, setShowNotifications] = useState(false);
+
+    const toggleNotifications = () => {
+        setShowNotifications(!showNotifications);
+    };
     return (
         <div className='flex justify-between items-center py-4 px-14'>
             <div className='w-40'>
@@ -45,13 +54,17 @@ const Header = () => {
                 <div className='bg-[#f1f1f1] rounded-full p-2'>
                     <MdElectricBolt size={18} />
                 </div>
-                <div className='bg-[#f1f1f1] rounded-full p-2 relative'>
+                <div className='bg-[#f1f1f1] rounded-full p-2 relative cursor-pointer' onClick={toggleNotifications}>
                     <div className='bg-[#ff3131] text-[10px] font-semibold font-canvasans p-2 h-4 w-4 rounded-full flex items-center justify-center  absolute -top-2 right-0 text-white'>1</div>
                     <IoIosNotifications size={18} />
                 </div>
 
 
             </div>
+            {/* Notification Modal */}
+            {showNotifications && (
+                <DashboardNotification toggleNotifications={toggleNotifications} />
+            )}
         </div>
     )
 }

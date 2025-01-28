@@ -264,6 +264,8 @@ const DashboardHome = () => {
                 )}
 
             </div>
+
+            {/* Quick actions */}
             <div className="h-[600px] rounded-2xl w-[400px]"
 
             >
