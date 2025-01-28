@@ -10,6 +10,7 @@ import { SiGmail } from "react-icons/si";
 import { BsGlobe } from "react-icons/bs";
 import { GiElectric } from "react-icons/gi";
 import { GoClock } from "react-icons/go";
+import { MdOutlineSync } from "react-icons/md";
 
 const chats = [
     {
@@ -84,6 +85,7 @@ const bookings = [
         patientName: 'David Doe',
         doctorName: 'Dr. Parker- Pineland',
         status: 'confirmed',
+        isRepeated: false
     },
     {
         id: 2,
@@ -94,6 +96,7 @@ const bookings = [
         patientName: 'David Doe',
         doctorName: 'Dr. Parker- Pineland',
         status: 'followUp',
+        isRepeated: true
     },
     {
         id: 3,
@@ -104,6 +107,7 @@ const bookings = [
         patientName: 'David Doe',
         doctorName: 'Dr. Parker- Pineland',
         status: 'cancelled',
+        isRepeated: false
     },
     {
         id: 4,
@@ -114,6 +118,7 @@ const bookings = [
         patientName: 'David Doe',
         doctorName: 'Dr. Parker- Pineland',
         status: 'followUp',
+        isRepeated: false
     },
 ]
 
@@ -205,9 +210,19 @@ const DashboardHome = () => {
                                 </div>
                                 <div className="space-y-3">
                                     <div className="">
-                                        <div className="flex items-center gap-1">
-                                            <GoClock size={13} />
-                                            <h1 className="text-xs font-semibold">{booking.startTime} - {booking.endTime}</h1>
+                                        <div className="flex items-center gap-2">
+                                            <div className="flex items-center gap-1">
+                                                <GoClock size={13} />
+                                                <h1 className="text-xs font-semibold">{booking.startTime} - {booking.endTime}</h1>
+                                            </div>
+                                            {booking.isRepeated && (
+                                                <div className="flex items-center gap-1 px-1 py-[1px] rounded-md" style={{
+                                                    background: 'radial-gradient(circle at 0% 0%, #5170ff, #d83bff)',
+                                                }}>
+                                                    <MdOutlineSync size={8} fill="white" />
+                                                    <p className="text-[8px] text-white">Repeat</p>
+                                                </div>
+                                            )}
                                         </div>
                                         <div className="flex items-center gap-1">
                                             <GoClock size={13} />
