@@ -18,7 +18,7 @@ const Header = () => {
     };
     return (
         <div className='flex justify-between items-center py-4 px-4 mx-auto max-w-[1300px]'>
-            <div className='w-36'>
+            <div className='w-[149.7px] h-[44.9px]'>
                 <img src={logoImg} alt="" className=' object-contain' />
             </div>
             <div>

@@ -125,7 +125,7 @@ const bookings = [
 const DashboardHome = () => {
     return (
         <div className="flex items-center gap-5 pt-10">
-            <div className=" h-[600px] rounded-2xl w-full" style={{
+            <div className=" h-[574.9px] rounded-2xl w-[356.1px]" style={{
                 backgroundColor: 'rgba(240, 240, 240, 0.6)', // Whitish and semi-transparent
                 // backdropFilter: 'blur(10px)', // Frosted glass effect
                 // WebkitBackdropFilter: 'blur(10px)', // Safari support
@@ -182,7 +182,7 @@ const DashboardHome = () => {
                 )}
 
             </div>
-            <div className=" h-[600px] rounded-2xl  w-full" style={{
+            <div className="h-[574.9px] rounded-2xl w-[356.1px]" style={{
                 backgroundColor: 'rgba(240, 240, 240, 0.6)', // Whitish and semi-transparent
                 // backdropFilter: 'blur(10px)', // Frosted glass effect
                 // WebkitBackdropFilter: 'blur(10px)', // Safari support
@@ -266,59 +266,59 @@ const DashboardHome = () => {
             </div>
 
             {/* Quick actions */}
-            <div className="h-[600px] rounded-2xl w-full"
+            <div className="h-[574.9px] rounded-2xl w-[356.1px]"
 
             >
-                <div className="mr-3">
-                    <h1 className="text-[24px] font-canvasans font-bold mb-10">Quick Actions</h1>
-                    <div style={{
-                        background: 'radial-gradient(circle at 0% 0%, #5170ff, #d83bff)',
-                    }} className="py-3 px-4 rounded-2xl space-y-1.5 mb-5">
-                        <div className="flex justify-between">
-                            <h1 className="text-white font-canvasans text-sm font-semibold">Cancel my next appointment</h1>
-                            <div className="bg-white p-[2px]  rounded-2xl ">
-                                <img src={automationsImg} alt="" className="w-3.5" />
+                <div className="mr-3 space-y-[36px]">
+                    <h1 className="text-[24px] font-canvasans font-bold">Quick Actions</h1>
+                    <div className="space-y-[16px]">
+                        <div style={{
+                            background: 'radial-gradient(circle at 0% 0%, #5170ff, #d83bff)',
+                        }} className="w-[356.1px] h-[110.3px] rounded-2xl space-y-1.5  pt-[18px] px-[22px] pb-[32px]">
+                            <div className="flex justify-between">
+                                <h1 className="text-white font-canvasans text-[11.7px] font-semibold">Cancel my next appointment</h1>
+                                <div className="bg-white p-[2px] w-[19.9px] h-[19.9px]  rounded-2xl ">
+                                    <img src={automationsImg} alt="" className="" />
+                                </div>
                             </div>
+                            <h1 className="text-white font-canvasans text-[8.9px] font-thin max-w-[280px]">Sends  a Whatsapp to the patient who’s scheduled to come in next to inform them.</h1>
+                            <p className="text-white flex justify-end text-[6.9px]">Saves 10 mins</p>
                         </div>
-                        <h1 className="text-white font-canvasans text-xs font-thin">Sends  a Whatsapp to the patient who’s scheduled to come in next to inform them.</h1>
-                        <p className="text-white flex justify-end text-[10px]">Saves 10 mins</p>
-                    </div>
-                    <div
-                        className="py-3 px-4 rounded-2xl space-y-1.5 mb-5"
-                        style={{
-                            background: "linear-gradient(90deg, #ff66c4, #ffde59)",
-                        }}
-                    >
-                        <div className="flex justify-between">
-                            <h1 className="font-canvasans text-sm font-semibold text-white">Cancel my next appointment</h1>
-                            <div className="bg-black p-1 rounded-full flex items-center justify-center">
-                                <img src={whiteAutomationsImg} alt="" className="w-3 h-3" />
+                        <div
+                            className="py-3 px-4 rounded-2xl space-y-1.5 w-[356.1px] h-[110.3px]"
+                            style={{
+                                background: "linear-gradient(90deg, #ff66c4, #ffde59)",
+                            }}
+                        >
+                            <div className="flex justify-between">
+                                <h1 className="text-white font-canvasans text-[11.7px] font-semibold">Cancel my next appointment</h1>
+                                <div className="bg-black p-1  rounded-full flex items-center justify-center">
+                                    <img src={whiteAutomationsImg} alt="" className="w-3 h-3" />
+                                </div>
                             </div>
+                            <h1 className="text-white font-canvasans text-[8.9px] font-thin max-w-[280px]">Sends  a Whatsapp to the patient who’s scheduled to come in next to inform them.</h1>
+                            <p className="text-white flex justify-end text-[10px]">Saves 10 mins</p>
                         </div>
-                        <h1 className="font-canvasans text-xs font-thin text-white">
-                            Sends a Whatsapp to the patient who’s scheduled to come in next to inform them.
-                        </h1>
-                        <p className="text-white flex justify-end text-[10px]">Saves 10 mins</p>
-                    </div>
-                    <div className="py-3 px-4 rounded-2xl space-y-1.5 bg-[#f1f1f1] mb-5">
-                        <div className="flex justify-between">
-                            <h1 className=" font-canvasans text-sm font-semibold">Cancel my next appointment</h1>
-                            <div className="bg-black p-1  rounded-full flex items-center justify-center">
-                                <img src={whiteAutomationsImg} alt="" className="w-3 h-3" />
+                        <div className="py-3 px-4 rounded-2xl space-y-1.5 bg-[#f1f1f1] w-[356.1px] h-[110.3px]">
+                            <div className="flex justify-between">
+                                <h1 className=" font-canvasans text-[11.7px] font-semibold">Cancel my next appointment</h1>
+                                <div className="bg-black p-1  rounded-full flex items-center justify-center">
+                                    <img src={whiteAutomationsImg} alt="" className="w-3 h-3" />
+                                </div>
                             </div>
+                            <h1 className=" font-canvasans text-[8.9px] font-thin max-w-[280px]">Sends  a Whatsapp to the patient who’s scheduled to come in next to inform them.</h1>
+                            <p className="text-[#757575] flex justify-end text-[10px]">Saves 10 mins</p>
                         </div>
-                        <h1 className=" font-canvasans text-xs font-thin">Sends  a Whatsapp to the patient who’s scheduled to come in next to inform them.</h1>
-                        <p className="text-[#757575] flex justify-end text-[10px]">Saves 10 mins</p>
-                    </div>
-                    <div className="py-3 px-4 rounded-2xl space-y-1.5 bg-[#f1f1f1] mb-5">
-                        <div className="flex justify-between">
-                            <h1 className=" font-canvasans text-sm font-semibold">Cancel my next appointment</h1>
-                            <div className="bg-black p-1  rounded-full flex items-center justify-center">
-                                <img src={whiteAutomationsImg} alt="" className="w-3 h-3" />
+                        <div className="py-3 px-4 rounded-2xl space-y-1.5 bg-[#f1f1f1] w-[356.1px] h-[110.3px]">
+                            <div className="flex justify-between">
+                                <h1 className=" font-canvasans text-sm font-semibold">Cancel my next appointment</h1>
+                                <div className="bg-black p-1  rounded-full flex items-center justify-center">
+                                    <img src={whiteAutomationsImg} alt="" className="w-3 h-3" />
+                                </div>
                             </div>
+                            <h1 className=" font-canvasans text-xs font-thin">Sends  a Whatsapp to the patient who’s scheduled to come in next to inform them.</h1>
+                            <p className="text-[#757575] flex justify-end text-[10px]">Saves 10 mins</p>
                         </div>
-                        <h1 className=" font-canvasans text-xs font-thin">Sends  a Whatsapp to the patient who’s scheduled to come in next to inform them.</h1>
-                        <p className="text-[#757575] flex justify-end text-[10px]">Saves 10 mins</p>
                     </div>
                 </div>
             </div>
