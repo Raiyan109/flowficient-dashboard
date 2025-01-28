@@ -131,7 +131,9 @@ const Header = () => {
             {/* Flowki AI Modal */}
             {
                 showFlowkiAi && (
-                    <FlowkiAiModal toggleFlowkiAi={toggleFlowkiAi} />
+                    <div className="fixed inset-0 bg-gray-100 bg-opacity-30"> {/* Light grayish overlay */}
+                        <FlowkiAiModal toggleFlowkiAi={toggleFlowkiAi} />
+                    </div>
                 )
             }
         </div>
