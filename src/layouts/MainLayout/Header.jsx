@@ -45,7 +45,8 @@ const Header = () => {
                 <div className='bg-[#f1f1f1] rounded-full p-2'>
                     <MdElectricBolt size={18} />
                 </div>
-                <div className='bg-[#f1f1f1] rounded-full p-2'>
+                <div className='bg-[#f1f1f1] rounded-full p-2 relative'>
+                    <div className='bg-[#ff3131] text-[10px] font-semibold font-canvasans p-2 h-4 w-4 rounded-full flex items-center justify-center  absolute -top-2 right-0 text-white'>1</div>
                     <IoIosNotifications size={18} />
                 </div>
 
