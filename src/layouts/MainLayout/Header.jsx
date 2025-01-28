@@ -10,25 +10,30 @@ import { useState } from 'react';
 import { FaExclamation } from "react-icons/fa6";
 import { IoCloseOutline } from "react-icons/io5";
 import DashboardNotification from '../../components/Notifications/DashboardNotification';
+import FlowkiAiModal from '../../components/Chatbots/FlowkiAiModal';
 
 const Header = () => {
     const [showNotifications, setShowNotifications] = useState(false);
     const [showSearchHistory, setShowSearchHistory] = useState(false);
+    const [showFlowkiAi, setShowFlowkiAi] = useState(false);
 
     const toggleNotifications = () => {
         setShowNotifications(!showNotifications);
     };
+
+    const toggleFlowkiAi = () => {
+        setShowFlowkiAi(!showFlowkiAi);
+    };
+
     return (
         <div className='flex justify-between items-center py-4 px-4 mx-auto max-w-[1300px] relative'>
             <div className='w-[149.7px] h-[44.9px]'>
                 <img src={logoImg} alt="" className=' object-contain' />
             </div>
             <div>
-                <div className="relative bg-black focus:bg-gradient-to-r focus:from-[#5170ff] focus:to-[#d83bff] rounded-md w-[636.5px] h-[53.5px]" onClick={() => {
-                    setShowSearchHistory(!showSearchHistory)
-                }}>
+                <div className="relative bg-black focus:bg-gradient-to-r focus:from-[#5170ff] focus:to-[#d83bff] rounded-md w-[636.5px] h-[53.5px]" >
                     <label htmlFor="Search" className="sr-only"> Search </label>
-                    <span className="absolute inset-y-0 start-1 grid w-10 place-content-center">
+                    <span className="absolute inset-y-0 start-1 grid w-10 place-content-center" onClick={toggleFlowkiAi}>
                         <img src={spark} alt="" />
                     </span>
                     <input
@@ -36,6 +41,9 @@ const Header = () => {
                         id="Search"
                         placeholder="What would you like to do?"
                         className="w-[636.5px] h-[53.5px] rounded-md bg-transparent border-none outline-none pl-12 placeholder:text-white placeholder:font-canvasans placeholder:text-[13px] text-white font-canvasans focus:bg-gradient-to-r focus:from-[#5170ff] focus:to-[#d83bff]"
+                        onClick={() => {
+                            setShowSearchHistory(!showSearchHistory)
+                        }}
                     />
 
                     <span className="absolute inset-y-0 end-1 grid w-10 place-content-center">
@@ -114,10 +122,18 @@ const Header = () => {
 
 
             </div>
+
             {/* Notification Modal */}
             {showNotifications && (
                 <DashboardNotification toggleNotifications={toggleNotifications} />
             )}
+
+            {/* Flowki AI Modal */}
+            {
+                showFlowkiAi && (
+                    <FlowkiAiModal toggleFlowkiAi={toggleFlowkiAi} />
+                )
+            }
         </div>
     )
 }
