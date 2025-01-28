@@ -127,15 +127,15 @@ const DashboardHome = () => {
         <div className="flex items-center gap-5 pt-10">
             <div className=" h-[600px] rounded-2xl w-full" style={{
                 backgroundColor: 'rgba(240, 240, 240, 0.6)', // Whitish and semi-transparent
-                backdropFilter: 'blur(10px)', // Frosted glass effect
-                WebkitBackdropFilter: 'blur(10px)', // Safari support
+                // backdropFilter: 'blur(10px)', // Frosted glass effect
+                // WebkitBackdropFilter: 'blur(10px)', // Safari support
             }}>
                 <div className="flex justify-between items-center p-6">
-                    <h1 className="text-4xl font-canvasans font-bold">Chats</h1>
+                    <h1 className="text-[24px] font-canvasans font-bold">Chats</h1>
                     <div className="flex items-center gap-4">
                         <div className="flex items-center gap-2">
-                            <div className="rounded-md px-2 bg-white font-canvasans font-semibold">0</div>
-                            <div className="rounded-md px-2 bg-black text-white font-canvasans font-semibold">0</div>
+                            <div className="rounded-md w-[27.3px] h-[25.8px] bg-white font-canvasans font-semibold flex items-center justify-center">0</div>
+                            <div className="rounded-md w-[27.3px] h-[25.8px] bg-black text-white font-canvasans font-semibold  flex items-center justify-center">0</div>
                         </div>
                         <div className="border border-[#b9b9b9] p-1 rounded-full">
                             {/* <BsArrowsAngleExpand className="text-[#b9b9b9] text-xl" /> */}
@@ -148,19 +148,19 @@ const DashboardHome = () => {
                     chats.map((chat) => (
                         <div className="py-2 px-4 rounded-2xl bg-white mb-5 mx-6">
                             <div className="flex justify-between pt-1">
-                                <h1 className=" font-canvasans text-xs">{chat.name}</h1>
+                                <h1 className=" font-canvasans text-[8.7px]">{chat.name}</h1>
                                 <div className=" rounded-full flex items-center justify-center gap-1">
-                                    <div className="bg-gray-400 rounded-full p-[3px]">
-                                        <chat.automationIcon size={7} fill="white" />
+                                    <div className="bg-[#757575] rounded-full p-[3px]">
+                                        <chat.automationIcon size={5} fill="white" className="" />
                                     </div>
                                     <div>
-                                        <chat.whatsAppIcon size={15} fill="lightGreen" />
+                                        <chat.whatsAppIcon size={13} fill="lightGreen" />
                                     </div>
                                 </div>
                             </div>
                             <div className="flex justify-between items-start">
-                                <h1 className="font-canvasans text-[10px] font-thin">{chat.lastMessage}</h1>
-                                <p className="text-[#757575] text-[8px] self-end">{chat.time}</p>
+                                <h1 className="font-canvasans text-[8.9px] font-thin">{chat.lastMessage}</h1>
+                                <p className="text-[#757575] text-[6.9px] self-end">{chat.time}</p>
                             </div>
                         </div>
                     ))
@@ -184,15 +184,15 @@ const DashboardHome = () => {
             </div>
             <div className=" h-[600px] rounded-2xl  w-full" style={{
                 backgroundColor: 'rgba(240, 240, 240, 0.6)', // Whitish and semi-transparent
-                backdropFilter: 'blur(10px)', // Frosted glass effect
-                WebkitBackdropFilter: 'blur(10px)', // Safari support
+                // backdropFilter: 'blur(10px)', // Frosted glass effect
+                // WebkitBackdropFilter: 'blur(10px)', // Safari support
             }}>
                 <div className=" flex justify-between items-center p-6">
-                    <h1 className="text-4xl font-canvasans font-bold">Bookings</h1>
+                    <h1 className="text-[24px] font-canvasans font-bold">Bookings</h1>
                     <div className="flex items-center gap-4">
                         <div className="flex items-center gap-2">
-                            <div className="rounded-md px-2 bg-white font-canvasans font-semibold">0</div>
-                            <div className="rounded-md px-2 bg-black text-white font-canvasans font-semibold">0</div>
+                            <div className="rounded-md w-[27.3px] h-[25.8px] bg-white font-canvasans font-semibold flex items-center justify-center">0</div>
+                            <div className="rounded-md w-[27.3px] h-[25.8px] bg-black text-white font-canvasans font-semibold  flex items-center justify-center">0</div>
                         </div>
                         <div className="border border-[#b9b9b9] p-1 rounded-full">
                             {/* <BsArrowsAngleExpand className="text-[#b9b9b9] text-xl" /> */}
@@ -204,16 +204,16 @@ const DashboardHome = () => {
                     bookings.map((booking) => (
                         <div className="py-2 px-4 rounded-2xl bg-white mb-5 mx-6 flex justify-between gap-4">
                             <div className="flex gap-5">
-                                <div className="flex flex-col justify-center items-center">
-                                    <h1 className="font-canvasans text-xl">{booking.day}</h1>
-                                    <h1 className="font-canvasans font-bold text-3xl">{booking.date}</h1>
+                                <div className="flex flex-col justify-center items-center -space-y-2">
+                                    <h1 className="font-canvasans text-[12.9px]">{booking.day}</h1>
+                                    <h1 className="font-canvasans font-bold text-[23px]">{booking.date}</h1>
                                 </div>
                                 <div className="space-y-3">
                                     <div className="">
                                         <div className="flex items-center gap-2">
                                             <div className="flex items-center gap-1">
-                                                <GoClock size={13} />
-                                                <h1 className="text-xs font-semibold">{booking.startTime} - {booking.endTime}</h1>
+                                                <GoClock className="text-[7.7px]" />
+                                                <h1 className="text-[7.7px] font-semibold">{booking.startTime} - {booking.endTime}</h1>
                                             </div>
                                             {booking.isRepeated && (
                                                 <div className="flex items-center gap-1 px-1 py-[1px] rounded-md" style={{
@@ -225,23 +225,23 @@ const DashboardHome = () => {
                                             )}
                                         </div>
                                         <div className="flex items-center gap-1">
-                                            <GoClock size={13} />
-                                            <h1 className="text-xs font-semibold">{booking.patientName} - New patient</h1>
+                                            <GoClock className="text-[7.7px]" />
+                                            <h1 className="text-[7.7px] font-semibold">{booking.patientName} - New patient</h1>
                                         </div>
                                         <div className="flex items-center gap-1">
-                                            <GoClock size={13} />
-                                            <h1 className="text-xs font-semibold">{booking.doctorName}</h1>
+                                            <GoClock className="text-[7.7px]" />
+                                            <h1 className="text-[7.7px] font-semibold">{booking.doctorName}</h1>
                                         </div>
                                     </div>
 
                                     <div>
-                                        <h1 className={`text-[11px] font-bold  ${booking.status === 'confirmed' ? 'text-[#01cf2f]' : booking.status === 'followUp' ? 'text-[#3c3c3c]' : 'text-[#ff3131]'}`}>{booking.status === 'confirmed' ? 'Booking Confirmed- Details Collected' : booking.status === 'followUp' ? 'Confirmation follow-up sent' : 'Booking Cancelled. Finding Replacement'}</h1>
+                                        <h1 className={`text-[7.7px] font-bold  ${booking.status === 'confirmed' ? 'text-[#01cf2f]' : booking.status === 'followUp' ? 'text-[#3c3c3c]' : 'text-[#ff3131]'}`}>{booking.status === 'confirmed' ? 'Booking Confirmed- Details Collected' : booking.status === 'followUp' ? 'Confirmation follow-up sent' : 'Booking Cancelled. Finding Replacement'}</h1>
                                     </div>
                                 </div>
                             </div>
                             <div>
                                 <div className="bg-black p-1  rounded-full flex items-center justify-center">
-                                    <img src={whiteAutomationsImg} alt="" className="w-3 h-3" />
+                                    <img src={whiteAutomationsImg} alt="" className="w-[14.9px] h-[14.9px]" />
                                 </div>
                             </div>
                         </div>
@@ -270,7 +270,7 @@ const DashboardHome = () => {
 
             >
                 <div className="mr-3">
-                    <h1 className="text-4xl font-canvasans font-bold mb-10">Quick Actions</h1>
+                    <h1 className="text-[24px] font-canvasans font-bold mb-10">Quick Actions</h1>
                     <div style={{
                         background: 'radial-gradient(circle at 0% 0%, #5170ff, #d83bff)',
                     }} className="py-3 px-4 rounded-2xl space-y-1.5 mb-5">

@@ -22,7 +22,7 @@ const Header = () => {
                 <img src={logoImg} alt="" className=' object-contain' />
             </div>
             <div>
-                <div className="relative bg-black rounded-md w-[550px]">
+                <div className="relative bg-black rounded-md w-[636.5px] h-[53.5px]">
                     <label htmlFor="Search" className="sr-only"> Search </label>
                     <span className="absolute inset-y-0 start-1 grid w-10 place-content-center">
                         <img src={spark} alt="" />
@@ -31,7 +31,7 @@ const Header = () => {
                         type="text"
                         id="Search"
                         placeholder="What would you like to do?"
-                        className="w-full rounded-md bg-transparent border-none outline-none h-12 pl-12 placeholder:text-white placeholder:font-canvasans text-white font-canvasans"
+                        className="w-full rounded-md bg-transparent border-none outline-none h-12 pl-12 placeholder:text-white placeholder:font-canvasans placeholder:text-[13px] text-white font-canvasans"
                     />
 
                     <span className="absolute inset-y-0 end-1 grid w-10 place-content-center">
@@ -41,7 +41,7 @@ const Header = () => {
             </div>
             <div className='flex items-center space-x-6'>
                 <button
-                    className="text-white rounded-xl py-2 px-7 font-canvasans text-sm font-semibold"
+                    className="text-white rounded-xl w-[149px] h-[39.1px] font-canvasans      text-[9.7px] font-semibold"
                     style={{
                         background: 'radial-gradient(circle at 0% 0%, #5170ff, #d83bff)',
                     }}
