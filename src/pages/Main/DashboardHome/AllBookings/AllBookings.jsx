@@ -142,58 +142,284 @@ const AllBookings = () => {
                 </div>
 
                 {/* Bookings */}
-                <div className=" mx-[32px] pt-[35px]">
-                    <div className="h-[79.7px] w-full bg-white rounded-[9px] flex justify-between pl-[18px]">
-                        <div className="flex">
-                            <div className="flex space-x-[16px]">
-                                <div className="-space-y-2 flex flex-col justify-center items-center">
-                                    <h1 className="text-[12.9px] font-montserrat">Wed</h1>
-                                    <h1 className="text-[23px] font-semibold font-canvasans">28</h1>
+                <div className="space-y-[14px]">
+                    <div className=" mx-[32px] pt-[35px]">
+                        <div className="h-[79.7px] w-full bg-white rounded-[9px] flex justify-between pl-[18px]">
+                            <div className="flex">
+                                <div className="flex space-x-[16px]">
+                                    <div className="-space-y-2 flex flex-col justify-center items-center">
+                                        <h1 className="text-[12.9px] font-montserrat">Wed</h1>
+                                        <h1 className="text-[23px] font-semibold font-canvasans">28</h1>
+                                    </div>
+                                    <div className="border-r my-2 border-gray-300"></div>
                                 </div>
-                                <div className="border-r my-2 border-gray-300"></div>
-                            </div>
-                            <div className="space-y-3 pl-[16px] pt-[19px] mr-[52px]">
-                                <div className="space-y-[13px]">
-                                    <div className="flex items-center gap-2">
-                                        <div className="flex items-center gap-1">
-                                            <GoClock className="w-[13px] h-[13px]" />
-                                            <h1 className="text-[8.8px] font-canvasans font-semibold">9:00 - 9:20</h1>
+                                <div className="space-y-3 pl-[16px] pt-[19px] mr-[52px]">
+                                    <div className="space-y-[13px]">
+                                        <div className="flex items-center gap-2">
+                                            <div className="flex items-center gap-1">
+                                                <GoClock className="w-[13px] h-[13px]" />
+                                                <h1 className="text-[8.8px] font-canvasans font-semibold">9:00 - 9:20</h1>
+                                            </div>
+                                            <div className="flex items-center gap-1 px-0.5 py-[0.5px] rounded-[3px]" style={{
+                                                background: 'radial-gradient(circle at 0% 0%, #5170ff, #d83bff)',
+                                            }}>
+                                                <MdOutlineSync size={8} fill="white" />
+                                                <p className="text-[5.8px] text-white font-canvasans">Repeat</p>
+                                            </div>
                                         </div>
-                                        <div className="flex items-center gap-1 px-0.5 py-[0.5px] rounded-[3px]" style={{
-                                            background: 'radial-gradient(circle at 0% 0%, #5170ff, #d83bff)',
-                                        }}>
-                                            <MdOutlineSync size={8} fill="white" />
-                                            <p className="text-[5.8px] text-white font-canvasans">Repeat</p>
+                                        <div className="flex items-center gap-2">
+                                            <div className="flex items-center gap-1">
+                                                <GoClock className="w-[13px] h-[13px]" />
+                                                <h1 className="text-[8.8px] font-canvasans font-semibold">Dr Parker - Pineland</h1>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className="flex items-center gap-2">
-                                        <div className="flex items-center gap-1">
-                                            <GoClock className="w-[13px] h-[13px]" />
-                                            <h1 className="text-[8.8px] font-canvasans font-semibold">Dr Parker - Pineland</h1>
-                                        </div>
+                                </div>
+                                <div className="pt-[19px] space-y-[12px]">
+                                    <div className="flex items-center gap-1 ">
+                                        <GoClock className="w-[13px] h-[13px]" />
+                                        <h1 className="text-[8.8px] font-canvasans font-semibold">David Patient - New Patient</h1>
                                     </div>
+                                    <h1 className="text-[8.8px] font-canvasans font-light">Acne Treatment</h1>
                                 </div>
                             </div>
-                            <div className="pt-[19px] space-y-[12px]">
-                                <div className="flex items-center gap-1 ">
-                                    <GoClock className="w-[13px] h-[13px]" />
-                                    <h1 className="text-[8.8px] font-canvasans font-semibold">David Patient - New Patient</h1>
+
+                            {/* Status */}
+                            <div className=" flex items-center gap-[84px] pr-[24px]">
+                                <div className="flex flex-col">
+                                    <h1 className="text-[8.8px] font-canvasans">Status</h1>
+                                    <h1 className="text-[#01cf2f] text-[9.9px] font-canvasans">Booking Confirmed - Details Collected</h1>
                                 </div>
-                                <h1 className="text-[8.8px] font-canvasans font-light">Acne Treatment</h1>
+                                <div className="flex gap-[12px]">
+                                    <div className="bg-black rounded-full">
+                                        <MdElectricBolt className="text-white text-xs" />
+                                    </div>
+                                    <BsThreeDotsVertical />
+                                </div>
                             </div>
                         </div>
-
-                        {/* Status */}
-                        <div className=" flex items-center gap-[84px] pr-[24px]">
-                            <div className="flex flex-col">
-                                <h1 className="text-[8.8px] font-canvasans">Status</h1>
-                                <h1 className="text-[#01cf2f] text-[9.9px] font-canvasans">Booking Confirmed - Details Collected</h1>
-                            </div>
-                            <div className="flex gap-[12px]">
-                                <div className="bg-black rounded-full">
-                                    <MdElectricBolt className="text-white text-xs" />
+                    </div>
+                    <div className=" mx-[32px]">
+                        <div className="h-[79.7px] w-full bg-white rounded-[9px] flex justify-between pl-[18px]">
+                            <div className="flex">
+                                <div className="flex space-x-[16px]">
+                                    <div className="-space-y-2 flex flex-col justify-center items-center">
+                                        <h1 className="text-[12.9px] font-montserrat">Wed</h1>
+                                        <h1 className="text-[23px] font-semibold font-canvasans">28</h1>
+                                    </div>
+                                    <div className="border-r my-2 border-gray-300"></div>
                                 </div>
-                                <BsThreeDotsVertical />
+                                <div className="space-y-3 pl-[16px] pt-[19px] mr-[52px]">
+                                    <div className="space-y-[13px]">
+                                        <div className="flex items-center gap-2">
+                                            <div className="flex items-center gap-1">
+                                                <GoClock className="w-[13px] h-[13px]" />
+                                                <h1 className="text-[8.8px] font-canvasans font-semibold">9:00 - 9:20</h1>
+                                            </div>
+                                            <div className="flex items-center gap-1 px-0.5 py-[0.5px] rounded-[3px]" style={{
+                                                background: 'radial-gradient(circle at 0% 0%, #5170ff, #d83bff)',
+                                            }}>
+                                                <MdOutlineSync size={8} fill="white" />
+                                                <p className="text-[5.8px] text-white font-canvasans">Repeat</p>
+                                            </div>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <div className="flex items-center gap-1">
+                                                <GoClock className="w-[13px] h-[13px]" />
+                                                <h1 className="text-[8.8px] font-canvasans font-semibold">Dr Parker - Pineland</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="pt-[19px] space-y-[12px]">
+                                    <div className="flex items-center gap-1 ">
+                                        <GoClock className="w-[13px] h-[13px]" />
+                                        <h1 className="text-[8.8px] font-canvasans font-semibold">David Patient - New Patient</h1>
+                                    </div>
+                                    <h1 className="text-[8.8px] font-canvasans font-light">Acne Treatment</h1>
+                                </div>
+                            </div>
+
+                            {/* Status */}
+                            <div className=" flex items-center gap-[84px] pr-[24px]">
+                                <div className="flex flex-col">
+                                    <h1 className="text-[8.8px] font-canvasans">Status</h1>
+                                    <h1 className="text-[#01cf2f] text-[9.9px] font-canvasans">Booking Confirmed - Details Collected</h1>
+                                </div>
+                                <div className="flex gap-[12px]">
+                                    <div className="bg-black rounded-full">
+                                        <MdElectricBolt className="text-white text-xs" />
+                                    </div>
+                                    <BsThreeDotsVertical />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className=" mx-[32px]">
+                        <div className="h-[79.7px] w-full bg-white rounded-[9px] flex justify-between pl-[18px]">
+                            <div className="flex">
+                                <div className="flex space-x-[16px]">
+                                    <div className="-space-y-2 flex flex-col justify-center items-center">
+                                        <h1 className="text-[12.9px] font-montserrat">Wed</h1>
+                                        <h1 className="text-[23px] font-semibold font-canvasans">28</h1>
+                                    </div>
+                                    <div className="border-r my-2 border-gray-300"></div>
+                                </div>
+                                <div className="space-y-3 pl-[16px] pt-[19px] mr-[52px]">
+                                    <div className="space-y-[13px]">
+                                        <div className="flex items-center gap-2">
+                                            <div className="flex items-center gap-1">
+                                                <GoClock className="w-[13px] h-[13px]" />
+                                                <h1 className="text-[8.8px] font-canvasans font-semibold">9:00 - 9:20</h1>
+                                            </div>
+                                            <div className="flex items-center gap-1 px-0.5 py-[0.5px] rounded-[3px]" style={{
+                                                background: 'radial-gradient(circle at 0% 0%, #5170ff, #d83bff)',
+                                            }}>
+                                                <MdOutlineSync size={8} fill="white" />
+                                                <p className="text-[5.8px] text-white font-canvasans">Repeat</p>
+                                            </div>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <div className="flex items-center gap-1">
+                                                <GoClock className="w-[13px] h-[13px]" />
+                                                <h1 className="text-[8.8px] font-canvasans font-semibold">Dr Parker - Pineland</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="pt-[19px] space-y-[12px]">
+                                    <div className="flex items-center gap-1 ">
+                                        <GoClock className="w-[13px] h-[13px]" />
+                                        <h1 className="text-[8.8px] font-canvasans font-semibold">David Patient - New Patient</h1>
+                                    </div>
+                                    <h1 className="text-[8.8px] font-canvasans font-light">Acne Treatment</h1>
+                                </div>
+                            </div>
+
+                            {/* Status */}
+                            <div className=" flex items-center gap-[84px] pr-[24px]">
+                                <div className="flex flex-col">
+                                    <h1 className="text-[8.8px] font-canvasans">Status</h1>
+                                    <h1 className="text-[#01cf2f] text-[9.9px] font-canvasans">Booking Confirmed - Details Collected</h1>
+                                </div>
+                                <div className="flex gap-[12px]">
+                                    <div className="bg-black rounded-full">
+                                        <MdElectricBolt className="text-white text-xs" />
+                                    </div>
+                                    <BsThreeDotsVertical />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className=" mx-[32px]">
+                        <div className="h-[79.7px] w-full bg-white rounded-[9px] flex justify-between pl-[18px]">
+                            <div className="flex">
+                                <div className="flex space-x-[16px]">
+                                    <div className="-space-y-2 flex flex-col justify-center items-center">
+                                        <h1 className="text-[12.9px] font-montserrat">Wed</h1>
+                                        <h1 className="text-[23px] font-semibold font-canvasans">28</h1>
+                                    </div>
+                                    <div className="border-r my-2 border-gray-300"></div>
+                                </div>
+                                <div className="space-y-3 pl-[16px] pt-[19px] mr-[52px]">
+                                    <div className="space-y-[13px]">
+                                        <div className="flex items-center gap-2">
+                                            <div className="flex items-center gap-1">
+                                                <GoClock className="w-[13px] h-[13px]" />
+                                                <h1 className="text-[8.8px] font-canvasans font-semibold">9:00 - 9:20</h1>
+                                            </div>
+                                            <div className="flex items-center gap-1 px-0.5 py-[0.5px] rounded-[3px]" style={{
+                                                background: 'radial-gradient(circle at 0% 0%, #5170ff, #d83bff)',
+                                            }}>
+                                                <MdOutlineSync size={8} fill="white" />
+                                                <p className="text-[5.8px] text-white font-canvasans">Repeat</p>
+                                            </div>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <div className="flex items-center gap-1">
+                                                <GoClock className="w-[13px] h-[13px]" />
+                                                <h1 className="text-[8.8px] font-canvasans font-semibold">Dr Parker - Pineland</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="pt-[19px] space-y-[12px]">
+                                    <div className="flex items-center gap-1 ">
+                                        <GoClock className="w-[13px] h-[13px]" />
+                                        <h1 className="text-[8.8px] font-canvasans font-semibold">David Patient - New Patient</h1>
+                                    </div>
+                                    <h1 className="text-[8.8px] font-canvasans font-light">Acne Treatment</h1>
+                                </div>
+                            </div>
+
+                            {/* Status */}
+                            <div className=" flex items-center gap-[84px] pr-[24px]">
+                                <div className="flex flex-col">
+                                    <h1 className="text-[8.8px] font-canvasans">Status</h1>
+                                    <h1 className="text-[#01cf2f] text-[9.9px] font-canvasans">Booking Confirmed - Details Collected</h1>
+                                </div>
+                                <div className="flex gap-[12px]">
+                                    <div className="bg-black rounded-full">
+                                        <MdElectricBolt className="text-white text-xs" />
+                                    </div>
+                                    <BsThreeDotsVertical />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className=" mx-[32px]">
+                        <div className="h-[79.7px] w-full bg-white rounded-[9px] flex justify-between pl-[18px]">
+                            <div className="flex">
+                                <div className="flex space-x-[16px]">
+                                    <div className="-space-y-2 flex flex-col justify-center items-center">
+                                        <h1 className="text-[12.9px] font-montserrat">Wed</h1>
+                                        <h1 className="text-[23px] font-semibold font-canvasans">28</h1>
+                                    </div>
+                                    <div className="border-r my-2 border-gray-300"></div>
+                                </div>
+                                <div className="space-y-3 pl-[16px] pt-[19px] mr-[52px]">
+                                    <div className="space-y-[13px]">
+                                        <div className="flex items-center gap-2">
+                                            <div className="flex items-center gap-1">
+                                                <GoClock className="w-[13px] h-[13px]" />
+                                                <h1 className="text-[8.8px] font-canvasans font-semibold">9:00 - 9:20</h1>
+                                            </div>
+                                            <div className="flex items-center gap-1 px-0.5 py-[0.5px] rounded-[3px]" style={{
+                                                background: 'radial-gradient(circle at 0% 0%, #5170ff, #d83bff)',
+                                            }}>
+                                                <MdOutlineSync size={8} fill="white" />
+                                                <p className="text-[5.8px] text-white font-canvasans">Repeat</p>
+                                            </div>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <div className="flex items-center gap-1">
+                                                <GoClock className="w-[13px] h-[13px]" />
+                                                <h1 className="text-[8.8px] font-canvasans font-semibold">Dr Parker - Pineland</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="pt-[19px] space-y-[12px]">
+                                    <div className="flex items-center gap-1 ">
+                                        <GoClock className="w-[13px] h-[13px]" />
+                                        <h1 className="text-[8.8px] font-canvasans font-semibold">David Patient - New Patient</h1>
+                                    </div>
+                                    <h1 className="text-[8.8px] font-canvasans font-light">Acne Treatment</h1>
+                                </div>
+                            </div>
+
+                            {/* Status */}
+                            <div className=" flex items-center gap-[84px] pr-[24px]">
+                                <div className="flex flex-col">
+                                    <h1 className="text-[8.8px] font-canvasans">Status</h1>
+                                    <h1 className="text-[#01cf2f] text-[9.9px] font-canvasans">Booking Confirmed - Details Collected</h1>
+                                </div>
+                                <div className="flex gap-[12px]">
+                                    <div className="bg-black rounded-full">
+                                        <MdElectricBolt className="text-white text-xs" />
+                                    </div>
+                                    <BsThreeDotsVertical />
+                                </div>
                             </div>
                         </div>
                     </div>
