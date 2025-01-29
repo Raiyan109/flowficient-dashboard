@@ -1,15 +1,11 @@
-import { FaRegCircle } from "react-icons/fa6";
-import { GoPersonFill } from "react-icons/go";
-import { MdElectricBolt } from "react-icons/md";
-import { IoIosNotifications } from "react-icons/io";
-import { useState } from 'react';
+
 import { FaExclamation } from "react-icons/fa6";
 import { IoCloseOutline } from "react-icons/io5";
 
 const DashboardNotification = ({ toggleNotifications }) => {
     return (
         <div
-            className="fixed top-9 right-10 h-[700px] w-[400px] rounded-3xl z-50 bg-[#fafafa]"
+            className="fixed top-9 right-10 h-[700px] w-[400px] rounded-3xl bg-[#fafafa]"
         // style={{
         //     backgroundColor: 'rgba(240, 240, 240, 0.6)', // Whitish and semi-transparent
         //     // backdropFilter: 'blur(10px)', // Frosted glass effect
