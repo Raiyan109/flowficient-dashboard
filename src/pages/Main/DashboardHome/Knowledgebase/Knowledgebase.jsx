@@ -11,7 +11,7 @@ const Knowledgebase = () => {
 
                 <div className="flex items-center justify-center mt-[30px]">
                     <div
-                        className="w-[270.6px] h-[399.8px] rounded-[25px] flex flex-col justify-between"
+                        className="w-[270.6px] h-[399.8px] rounded-[25px] flex flex-col justify-between shadow-xl"
                         style={{ background: 'linear-gradient(135deg, #ff66c4, #ffde59)' }}
                     >
                         <div className='flex flex-col items-center justify-center pt-[40px]'>
@@ -34,7 +34,7 @@ const Knowledgebase = () => {
 
                 <div className="flex items-center justify-center mt-[30px]">
                     <div
-                        className="w-[270.6px] h-[399.8px] rounded-[25px] flex flex-col justify-between"
+                        className="w-[270.6px] h-[399.8px] rounded-[25px] flex flex-col justify-between shadow-xl"
                         style={{ background: 'radial-gradient(circle at 0% 0%, #5170ff, #d83bff)' }}
                     >
                         <div className='flex flex-col items-center justify-center pt-[40px]'>
