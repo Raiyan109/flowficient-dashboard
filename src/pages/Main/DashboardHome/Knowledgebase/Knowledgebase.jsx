@@ -1,6 +1,7 @@
 import brainImg from '../../../../assets/knowledebrain.png'
 import brainImg2 from '../../../../assets/knowledebrain3.png'
 import knowledgeImg from '../../../../assets/knowledebrain2.png'
+import { Link } from 'react-router-dom'
 
 const Knowledgebase = () => {
     return (
@@ -18,12 +19,12 @@ const Knowledgebase = () => {
                             <h3 className='font-canvasans  text-[10.7px] text-white text-center max-w-[180px]'>External AI is trained on data meant to be seen by the public</h3>
                         </div>
                         <div className='flex justify-center items-end pb-[28px]'>
-                            <button
+                            <Link to='internalkb'
                                 className="text-white bg-black rounded-[15px] w-[208.1px] h-[49.7px] font-gordita text-md flex items-center justify-center gap-5"
                             >
                                 <img src={knowledgeImg} alt="" className="w-[19.1px] h-[19.1px] object-contain" />
                                 <p className='text-[11.1px] font-gordita'>Train Model</p>
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 </div>

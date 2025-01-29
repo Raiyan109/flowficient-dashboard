@@ -70,7 +70,7 @@ export const dashboardItems = [
             },
             {
                 name: "InternalKB",
-                path: "internalkb",
+                path: "knowledgebase/internalkb",
                 icon: TbCoin,
                 element: <InternalKB />,
             },
