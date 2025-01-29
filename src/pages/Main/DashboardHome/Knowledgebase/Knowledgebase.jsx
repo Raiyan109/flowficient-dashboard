@@ -1,10 +1,10 @@
-import brainImg from '../../../assets/knowledebrain.png'
-import brainImg2 from '../../../assets/knowledebrain3.png'
-import knowledgeImg from '../../../assets/knowledebrain2.png'
+import brainImg from '../../../../assets/knowledebrain.png'
+import brainImg2 from '../../../../assets/knowledebrain3.png'
+import knowledgeImg from '../../../../assets/knowledebrain2.png'
 
 const Knowledgebase = () => {
     return (
-        <div className='flex gap-[36px] items-center justify-center pt-[33px]'>
+        <div className='flex gap-[36px] items-center justify-center pt-[10px]'>
             <div className="bg-[#fafafa] w-[356.1px] h-[574.9px] rounded-[25px]">
                 <h1 className="text-[23px] font-canvasans font-bold text-center pt-[33px]">External AI</h1>
 

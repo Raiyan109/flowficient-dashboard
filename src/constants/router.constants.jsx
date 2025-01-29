@@ -26,8 +26,10 @@ import DashboardHome from "../pages/Main/DashboardHome/DashboardHome";
 import Bookings from "../pages/Main/DashboardHome/Bookings";
 import Patients from "../pages/Main/DashboardHome/Patients";
 import Automations from "../pages/Main/DashboardHome/Automations";
-import Knowledgebase from "../pages/Main/DashboardHome/Knowledgebase";
+
 import Settings from "../pages/Main/DashboardHome/Settings";
+import Knowledgebase from "../pages/Main/DashboardHome/Knowledgebase/Knowledgebase";
+import InternalKB from "../pages/Main/DashboardHome/Knowledgebase/InternalKB";
 
 
 export const dashboardItems = [
@@ -59,7 +61,20 @@ export const dashboardItems = [
         name: "Knowledgebase",
         path: "knowledgebase",
         icon: TbCoin,
-        element: <Knowledgebase />,
+        children: [
+            {
+                name: "Knowledgebase",
+                path: "knowledgebase",
+                icon: TbCoin,
+                element: <Knowledgebase />,
+            },
+            {
+                name: "InternalKB",
+                path: "internalkb",
+                icon: TbCoin,
+                element: <InternalKB />,
+            },
+        ],
     },
     {
         name: "Settings",
