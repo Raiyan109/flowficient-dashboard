@@ -1,10 +1,9 @@
-import { useState } from "react"
-import { getMonth } from "../../../utils/getMonth"
-import Month from "../../../components/Calendars/Month"
-
+import { useState } from "react";
+import { getMonth } from "../../../utils/getMonth";
+import Month from "../../../components/Calendars/Month";
 
 const Bookings = () => {
-    const [currentMonth, setCurrentMonth] = useState(getMonth())
+    const [currentMonth, setCurrentMonth] = useState(getMonth());
 
     return (
         <div className="flex h-screen">
@@ -13,7 +12,7 @@ const Bookings = () => {
                 <Month month={currentMonth} />
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Bookings
+export default Bookings;
