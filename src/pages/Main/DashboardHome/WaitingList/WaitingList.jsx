@@ -1,4 +1,8 @@
 import { BsThreeDotsVertical } from "react-icons/bs";
+import { FaPlus } from "react-icons/fa";
+import { CiSearch } from "react-icons/ci";
+import { MdElectricBolt } from "react-icons/md";
+import { BiFilter } from "react-icons/bi";
 
 const WaitingList = () => {
     const tableData = [
@@ -60,8 +64,38 @@ const WaitingList = () => {
     return (
         <div>
             <div className='bg-[#f1f1f1] w-[1122.6px] h-[646px] rounded-[25px]'>
-                <div className="flex flex-col pl-[35px] pt-[25px]">
+                <div className="flex justify-between pl-[35px] pr-[28px] pt-[25px]">
                     <h1 className="font-canvasans text-[24px] font-bold">Waiting List</h1>
+
+                    {/* Search and Filters */}
+                    <div className="flex items-center gap-5">
+                        <button className="w-[106.6px] h-[28.6px] bg-black text-white rounded-[5px] flex gap-1 items-center justify-center">
+                            <FaPlus className="text-white text-[7.3px]" />
+                            <h1 className="font-gordita text-[7.3px]">Add to list</h1>
+                        </button>
+                        {/* Input */}
+                        <div className="relative bg-white rounded-[13px] w-[320px] h-[42.2px]" >
+                            <label htmlFor="Search" className="sr-only"> Search </label>
+                            <span className="absolute inset-y-0 start-1 grid w-10 place-content-center" >
+                                <CiSearch size={18} />
+                            </span>
+                            <input
+                                type="text"
+                                id="Search"
+                                placeholder="Search"
+                                className="bg-transparent py-[6px] border-none outline-none pl-12 placeholder:text-gray-500 placeholder:font-canvasans placeholder:text-[11px] text-white font-canvasans"
+
+                            />
+                        </div>
+                        <div className="flex items-center gap-[8px]">
+                            <div className='bg-[#fafafa] rounded-full w-[35.8px] h-[35.8px] flex items-center justify-center'>
+                                <MdElectricBolt size={18} />
+                            </div>
+                            <div className='bg-[#fafafa] rounded-full w-[35.8px] h-[35.8px] flex items-center justify-center'>
+                                <BiFilter size={18} />
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div className="p-4 px-[27px] font-gordita text-[8px]">
                     <table className="w-full">
