@@ -30,6 +30,7 @@ import Automations from "../pages/Main/DashboardHome/Automations";
 import Settings from "../pages/Main/DashboardHome/Settings";
 import Knowledgebase from "../pages/Main/DashboardHome/Knowledgebase/Knowledgebase";
 import InternalKB from "../pages/Main/DashboardHome/Knowledgebase/InternalKB";
+import WaitingList from "../pages/Main/DashboardHome/WaitingList/WaitingList";
 
 
 export const dashboardItems = [
@@ -75,6 +76,12 @@ export const dashboardItems = [
                 element: <InternalKB />,
             },
         ],
+    },
+    {
+        name: "WaitingList",
+        path: "waiting",
+        icon: TbCoin,
+        element: <WaitingList />,
     },
     {
         name: "Settings",

@@ -6,6 +6,7 @@ import automations from '../../assets/Automations.png';
 import knowledgebase from '../../assets/Knowledgebase.png';
 import settings from '../../assets/Settings.png';
 import { Link, useLocation } from 'react-router-dom';
+import { RiCalendarScheduleLine } from "react-icons/ri";
 
 const Sidebar = () => {
     const location = useLocation();
@@ -51,6 +52,13 @@ const Sidebar = () => {
                 className='bg-[#f1f1f1] rounded-full p-2 w-[39.1px] h-[39.1px] flex items-center justify-center'
             >
                 <img src={knowledgebase} alt="" className='w-[19.3px] h-[17px]' />
+            </Link>
+            <Link
+                to='/waiting'
+                style={location.pathname === '/waiting' ? activeStyle : {}}
+                className='bg-[#f1f1f1] rounded-full p-2 w-[39.1px] h-[39.1px] flex items-center justify-center'
+            >
+                <RiCalendarScheduleLine className='w-[19.3px] h-[17px]' />
             </Link>
             <Link
                 to='/settings'
