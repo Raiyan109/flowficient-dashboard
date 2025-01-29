@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import automationsImg from "../../../assets/Automations.png";
+import { MdEdit } from "react-icons/md";
 
 const Automations = () => {
     // State to manage the active tab
@@ -78,30 +79,25 @@ const Automations = () => {
                         ))
                 ) : (
                     // Content for Scheduled Actions
-                    Array(12)
+                    Array(6)
                         .fill(null)
                         .map((_, index) => (
                             <div
                                 key={index}
-                                style={{
-                                    background:
-                                        "radial-gradient(circle at 0% 0%, #ff5170, #ffd83b)",
-                                }}
-                                className="w-[356.1px] h-[110.3px] rounded-2xl space-y-1.5 pt-[18px] px-[22px] pb-[32px]"
+                                className="w-[351.7px] h-[187.9px] rounded-2xl space-y-1.5  px-[22px]  bg-[#f1f1f1] flex flex-col justify-center"
                             >
-                                <div className="flex justify-between">
-                                    <h1 className="text-white font-canvasans text-[11.7px] font-semibold">
-                                        Reschedule my next appointment
+                                <div className="flex justify-between gap-12">
+                                    <h1 className=" font-canvasans text-[12.7px] font-semibold">
+                                        Send a Whatsapp booking confirmation message
                                     </h1>
-                                    <div className="bg-white p-[2px] w-[19.9px] h-[19.9px] rounded-2xl">
-                                        <img src={automationsImg} alt="" className="" />
+                                    <div className="bg-black p-[2px] w-[19.9px] h-[19.9px] rounded-2xl">
+                                        <MdEdit className="text-white" />
                                     </div>
                                 </div>
-                                <h1 className="text-white font-canvasans text-[8.9px] font-thin max-w-[280px]">
-                                    Sends a reminder to the patient to reschedule their
-                                    appointment.
+                                <h1 className="font-canvasans text-[9.9px] font-extralight max-w-[220px] leading-loose">
+                                    Sends  a Whatsapp message to a patient to confirm their booking appointment. Updates will be tracked on booking listings.
                                 </h1>
-                                <p className="text-white flex justify-end text-[6.9px]">
+                                <p className="text-[#757575] flex justify-end text-[6.9px]">
                                     Saves 15 mins
                                 </p>
                             </div>
