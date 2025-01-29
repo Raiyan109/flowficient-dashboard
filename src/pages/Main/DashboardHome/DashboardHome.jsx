@@ -11,6 +11,7 @@ import { BsGlobe } from "react-icons/bs";
 import { GiElectric } from "react-icons/gi";
 import { GoClock } from "react-icons/go";
 import { MdOutlineSync } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const chats = [
     {
@@ -182,6 +183,8 @@ const DashboardHome = () => {
                 )}
 
             </div>
+
+            {/* Bookings */}
             <div className="h-[574.9px] rounded-2xl w-[356.1px]" style={{
                 backgroundColor: 'rgba(240, 240, 240, 0.6)', // Whitish and semi-transparent
                 // backdropFilter: 'blur(10px)', // Frosted glass effect
@@ -196,7 +199,9 @@ const DashboardHome = () => {
                         </div>
                         <div className="border border-[#b9b9b9] p-1 rounded-full">
                             {/* <BsArrowsAngleExpand className="text-[#b9b9b9] text-xl" /> */}
-                            <img src={arrowImg} alt="" />
+                            <Link to='/allBookings'>
+                                <img src={arrowImg} alt="" />
+                            </Link>
                         </div>
                     </div>
                 </div>

@@ -31,6 +31,7 @@ import Settings from "../pages/Main/DashboardHome/Settings";
 import Knowledgebase from "../pages/Main/DashboardHome/Knowledgebase/Knowledgebase";
 import InternalKB from "../pages/Main/DashboardHome/Knowledgebase/InternalKB";
 import WaitingList from "../pages/Main/DashboardHome/WaitingList/WaitingList";
+import AllBookings from "../pages/Main/DashboardHome/AllBookings/AllBookings";
 
 
 export const dashboardItems = [
@@ -51,6 +52,12 @@ export const dashboardItems = [
         path: "bookings",
         icon: TbCoin,
         element: <Bookings />,
+    },
+    {
+        name: "All Bookings",
+        path: "allBookings",
+        icon: TbCoin,
+        element: <AllBookings />,
     },
     {
         name: "Automations",
