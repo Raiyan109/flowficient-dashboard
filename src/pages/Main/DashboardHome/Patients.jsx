@@ -2,9 +2,13 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaPlus } from "react-icons/fa";
 import { CiSearch } from "react-icons/ci";
 import { MdElectricBolt } from "react-icons/md";
+import { RiDeleteBin5Line } from "react-icons/ri";
 import { BiFilter } from "react-icons/bi";
+import { useState } from "react";
 
 const Patients = () => {
+    const [openMenuIndex, setOpenMenuIndex] = useState(null);
+
     const tableData = [
         {
             title: "Mr.",
@@ -85,6 +89,11 @@ const Patients = () => {
             medicalAid: "Momentum",
         },
     ];
+
+    const toggleMenu = (index) => {
+        setOpenMenuIndex(openMenuIndex === index ? null : index);
+    };
+
     return (
         <div>
             <div className='bg-[#f1f1f1] w-[1122.6px] h-[646px] rounded-[25px]'>
@@ -158,10 +167,23 @@ const Patients = () => {
                                     <td className="py-2">{row.workNumber}</td>
                                     <td className="py-2 rounded-e-[9px]">{row.email}</td>
                                     <td className="py-2 rounded-e-[9px]">{row.medicalAid}</td>
-                                    <td className="py-2 rounded-e-[9px]">
-                                        <button className="text-gray-500">
+                                    <td className="py-2 rounded-e-[9px] relative">
+                                        <button className="text-gray-500" onClick={() => toggleMenu(index)}>
                                             <BsThreeDotsVertical size={12} />
                                         </button>
+                                        {openMenuIndex === index && (
+                                            <div className="absolute left-[-200.7px] top-0 bg-white shadow-xl rounded-[9px] w-[200.7px] h-[99.1px] z-10 flex justify-center items-center">
+                                                <ul className="p-2">
+                                                    <li className="p-2 hover:bg-gray-100 cursor-pointer text-[10px] font-gordita flex items-center gap-[19px]">
+                                                        <MdElectricBolt size={13} />
+                                                        Trigger an automation</li>
+                                                    <li className="p-2 hover:bg-gray-100 cursor-pointer text-[10px] font-gordita flex items-center gap-[19px]">
+                                                        <RiDeleteBin5Line size={13} />
+                                                        Remove from list</li>
+
+                                                </ul>
+                                            </div>
+                                        )}
                                     </td>
                                 </tr>
                             ))}
