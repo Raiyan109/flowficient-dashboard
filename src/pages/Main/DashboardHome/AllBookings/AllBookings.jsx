@@ -3,9 +3,12 @@ import { FaRegCalendarAlt } from "react-icons/fa";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import { GoClock } from "react-icons/go";
 import { BsThreeDotsVertical } from "react-icons/bs";
+import { useState } from "react";
+import QuickActionModal from "./QuickActionModal";
 
 
 const AllBookings = () => {
+    const [showQuickActions, setShowQuickActions] = useState(false)
     const bookings = [
         {
             id: 1,
@@ -53,6 +56,10 @@ const AllBookings = () => {
         },
     ]
 
+    const toggleQuickActions = () => {
+        setShowQuickActions(!showQuickActions)
+    }
+
     return (
         <div>
             <div className='bg-[#f1f1f1] w-[1122.6px] h-[646px] rounded-[25px]'>
@@ -67,7 +74,7 @@ const AllBookings = () => {
                             <SlArrowRight size={13} />
                         </div>
                         <div className="flex items-center gap-[8px]">
-                            <div className='bg-[#fafafa] rounded-full w-[32px] h-[32px] flex items-center justify-center'>
+                            <div className='bg-[#fafafa] rounded-full w-[32px] h-[32px] flex items-center justify-center' onClick={toggleQuickActions}>
                                 <MdElectricBolt size={16} />
                             </div>
                             <div className='bg-[#fafafa] rounded-full w-[32px] h-[32px] flex items-center justify-center'>
@@ -425,6 +432,16 @@ const AllBookings = () => {
                     </div>
                 </div>
             </div>
+
+
+            {/* QuickActions Modal */}
+            {
+                showQuickActions && (
+                    <div className="fixed inset-0 bg-gray-100 bg-opacity-30 z-50"> {/* Light grayish overlay */}
+                        <QuickActionModal toggleQuickActions={toggleQuickActions} />
+                    </div>
+                )
+            }
         </div>
     )
 }
