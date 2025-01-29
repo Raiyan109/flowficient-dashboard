@@ -4,6 +4,10 @@ import { CiSearch } from "react-icons/ci";
 import { MdElectricBolt } from "react-icons/md";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { BiFilter } from "react-icons/bi";
+import { IoEyeOutline } from "react-icons/io5";
+import { PiWhatsappLogoThin } from "react-icons/pi";
+import { CiMail } from "react-icons/ci";
+import { LiaEditSolid } from "react-icons/lia";
 import { useState } from "react";
 
 const Patients = () => {
@@ -172,15 +176,32 @@ const Patients = () => {
                                             <BsThreeDotsVertical size={12} />
                                         </button>
                                         {openMenuIndex === index && (
-                                            <div className="absolute left-[-200.7px] top-0 bg-white shadow-xl rounded-[9px] w-[200.7px] h-[99.1px] z-10 flex justify-center items-center">
+                                            <div className="absolute left-[-200.7px] top-0 bg-white shadow-xl rounded-[9px] w-[200.7px] z-10">
                                                 <ul className="p-2">
                                                     <li className="p-2 hover:bg-gray-100 cursor-pointer text-[10px] font-gordita flex items-center gap-[19px]">
+                                                        <IoEyeOutline size={13} />
+                                                        View full record
+                                                    </li>
+                                                    <li className="p-2 hover:bg-gray-100 cursor-pointer text-[10px] font-gordita flex items-center gap-[19px]">
                                                         <MdElectricBolt size={13} />
-                                                        Trigger an automation</li>
+                                                        Trigger an automation
+                                                    </li>
+                                                    <li className="p-2 hover:bg-gray-100 cursor-pointer text-[10px] font-gordita flex items-center gap-[19px]">
+                                                        <PiWhatsappLogoThin size={13} />
+                                                        Send a WhatsApp message
+                                                    </li>
+                                                    <li className="p-2 hover:bg-gray-100 cursor-pointer text-[10px] font-gordita flex items-center gap-[19px]">
+                                                        <CiMail size={13} />
+                                                        Send an email
+                                                    </li>
+                                                    <li className="p-2 hover:bg-gray-100 cursor-pointer text-[10px] font-gordita flex items-center gap-[19px]">
+                                                        <LiaEditSolid size={13} />
+                                                        Edit patient record
+                                                    </li>
                                                     <li className="p-2 hover:bg-gray-100 cursor-pointer text-[10px] font-gordita flex items-center gap-[19px]">
                                                         <RiDeleteBin5Line size={13} />
-                                                        Remove from list</li>
-
+                                                        Delete patient record
+                                                    </li>
                                                 </ul>
                                             </div>
                                         )}

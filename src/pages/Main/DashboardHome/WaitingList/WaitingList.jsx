@@ -141,7 +141,7 @@ const WaitingList = () => {
                                             <BsThreeDotsVertical size={12} />
                                         </button>
                                         {openMenuIndex === index && (
-                                            <div className="absolute left-[-200.7px] top-0 bg-white shadow-xl rounded-[9px] w-[200.7px] h-[99.1px] z-10 flex justify-center items-center">
+                                            <div className="absolute left-[-200.7px] top-0 bg-white shadow-xl rounded-[9px] w-[200.7px] z-10">
                                                 <ul className="p-2">
                                                     <li className="p-2 hover:bg-gray-100 cursor-pointer text-[10px] font-gordita flex items-center gap-[19px]">
                                                         <MdElectricBolt size={13} />
