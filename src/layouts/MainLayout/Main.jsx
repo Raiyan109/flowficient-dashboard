@@ -17,14 +17,18 @@ const Main = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
     return (
-        <div className="flex flex-col text-start bg-white h-screen w-screen relative" style={{
-            backgroundImage: `url(${bgSvg})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-        }}>
+        <div className="flex flex-col h-screen"
+            style={{
+                backgroundImage: `radial-gradient(circle, hsla(0, 0%, 54%, 0.3) 50%, hsla(0, 4%, 62%, 0.1) 100%), 
+                              linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), 
+                              url(${bgSvg})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+            }}
+        >
             {/* bg-gradient-to-b from-[#636262] to-[#bdbdbd] */}
-            <div className="absolute inset-0 main-gradient opacity-20" />
+            {/* <div className="absolute inset-0 main-gradient opacity-20" /> */}
             {/* z-10 */}
             <div className={`w-full transition-all ${isScrolled
                 ? "sticky top-0 bg-white shadow-md p-0"

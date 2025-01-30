@@ -126,12 +126,12 @@ const bookings = [
 const DashboardHome = () => {
     return (
         <div className="flex items-center gap-5 pt-10">
-            <div className=" h-[574.9px] rounded-[25px] w-[356.1px]"
-                style={{
-                    backgroundColor: 'rgba(250, 250, 250, 0.6)', // Whitish and semi-transparent
-                    // backdropFilter: 'blur(10px)', // Frosted glass effect
-                    // WebkitBackdropFilter: 'blur(10px)', // Safari support
-                }}
+            <div className=" h-[574.9px] rounded-[25px] w-[356.1px] bg-[#f1f1f1]"
+            // style={{
+            //     backgroundColor: 'rgba(250, 250, 250, 0.6)', // Whitish and semi-transparent
+            //     // backdropFilter: 'blur(10px)', // Frosted glass effect
+            //     // WebkitBackdropFilter: 'blur(10px)', // Safari support
+            // }}
             >
                 <div className="flex justify-between items-center pt-[22px] px-[20px] pb-[40px]">
                     <h1 className="text-[24px] font-canvasans font-bold">Chats</h1>
@@ -189,11 +189,13 @@ const DashboardHome = () => {
             </div>
 
             {/* Bookings */}
-            <div className="h-[574.9px] rounded-[25px] w-[356.1px] bg-[#f1f1f1]" style={{
-                backgroundColor: 'rgba(250, 250, 250, 0.6)', // Whitish and semi-transparent
-                // backdropFilter: 'blur(10px)', // Frosted glass effect
-                // WebkitBackdropFilter: 'blur(10px)', // Safari support
-            }}>
+            <div className="h-[574.9px] rounded-[25px] w-[356.1px] bg-[#f1f1f1]"
+            //  style={{
+            //     backgroundColor: 'rgba(250, 250, 250, 0.6)', // Whitish and semi-transparent
+            //     // backdropFilter: 'blur(10px)', // Frosted glass effect
+            //     // WebkitBackdropFilter: 'blur(10px)', // Safari support
+            // }}
+            >
                 <div className=" flex justify-between items-center  pt-[22px] px-[20px] pb-[40px]">
                     <h1 className="text-[24px] font-canvasans font-bold">Bookings</h1>
                     <div className="flex items-center gap-4">

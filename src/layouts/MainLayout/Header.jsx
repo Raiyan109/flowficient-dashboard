@@ -51,55 +51,59 @@ const Header = () => {
                     </span>
                 </div>
             </div>
-            {showSearchHistory && <div className='w-[636.5px] h-[222.9px] bg-white absolute top-20 left-[212px]'>
-                <div>
-                    <div className='flex items-center justify-between  p-[17px]'>
-                        <div className='flex items-center gap-[16px]'>
-                            <div className="bg-black p-[3px] w-[15.7px] h-[15.7px]  rounded-2xl flex items-center justify-center">
-                                <img src={automationsImg} alt="" className="" />
+            <div className=''>
+                {showSearchHistory &&
+                    <div className='w-[636.5px] h-[222.9px] bg-white absolute top-20 left-[212px]'>
+                        <div>
+                            <div className='flex items-center justify-between  p-[17px]'>
+                                <div className='flex items-center gap-[16px]'>
+                                    <div className="bg-black p-[3px] w-[15.7px] h-[15.7px]  rounded-2xl flex items-center justify-center">
+                                        <img src={automationsImg} alt="" className="" />
+                                    </div>
+                                    <h1 className='text-[13px] font-canvasans text-[#757575]'>Cancel my next appointment</h1>
+                                </div>
+                                <h1 className='text-[10px] font-canvasans text-[#757575]'>Saves 5 mins</h1>
                             </div>
-                            <h1 className='text-[13px] font-canvasans text-[#757575]'>Cancel my next appointment</h1>
+                            <div className='border-b-[0.5px] border-[#e3dddd] w-[600px] flex justify-center items-center mx-auto'></div>
                         </div>
-                        <h1 className='text-[10px] font-canvasans text-[#757575]'>Saves 5 mins</h1>
-                    </div>
-                    <div className='border-b-[0.5px] border-[#e3dddd] w-[600px] flex justify-center items-center mx-auto'></div>
-                </div>
-                <div>
-                    <div className='flex items-center justify-between  p-[17px]'>
-                        <div className='flex items-center gap-[16px]'>
-                            <div className="bg-black p-[3px] w-[15.7px] h-[15.7px]  rounded-2xl flex items-center justify-center">
-                                <img src={automationsImg} alt="" className="" />
+                        <div>
+                            <div className='flex items-center justify-between  p-[17px]'>
+                                <div className='flex items-center gap-[16px]'>
+                                    <div className="bg-black p-[3px] w-[15.7px] h-[15.7px]  rounded-2xl flex items-center justify-center">
+                                        <img src={automationsImg} alt="" className="" />
+                                    </div>
+                                    <h1 className='text-[13px] font-canvasans text-[#757575]'>Let my next appointment know I’ll be late</h1>
+                                </div>
+                                <h1 className='text-[10px] font-canvasans text-[#757575]'>Saves 5 mins</h1>
                             </div>
-                            <h1 className='text-[13px] font-canvasans text-[#757575]'>Let my next appointment know I’ll be late</h1>
+                            <div className='border-b-[0.5px] border-[#e3dddd] w-[600px] flex justify-center items-center mx-auto'></div>
                         </div>
-                        <h1 className='text-[10px] font-canvasans text-[#757575]'>Saves 5 mins</h1>
-                    </div>
-                    <div className='border-b-[0.5px] border-[#e3dddd] w-[600px] flex justify-center items-center mx-auto'></div>
-                </div>
-                <div>
-                    <div className='flex items-center justify-between  p-[17px]'>
-                        <div className='flex items-center gap-[16px]'>
-                            <div className="bg-black p-[3px] w-[15.7px] h-[15.7px]  rounded-2xl flex items-center justify-center">
-                                <img src={automationsImg} alt="" className="" />
+                        <div>
+                            <div className='flex items-center justify-between  p-[17px]'>
+                                <div className='flex items-center gap-[16px]'>
+                                    <div className="bg-black p-[3px] w-[15.7px] h-[15.7px]  rounded-2xl flex items-center justify-center">
+                                        <img src={automationsImg} alt="" className="" />
+                                    </div>
+                                    <h1 className='text-[13px] font-canvasans text-[#757575]'>Cancel my next appointment</h1>
+                                </div>
+                                <h1 className='text-[10px] font-canvasans text-[#757575]'>Saves 5 mins</h1>
                             </div>
-                            <h1 className='text-[13px] font-canvasans text-[#757575]'>Cancel my next appointment</h1>
+                            <div className='border-b-[0.5px] border-[#e3dddd] w-[600px] flex justify-center items-center mx-auto'></div>
                         </div>
-                        <h1 className='text-[10px] font-canvasans text-[#757575]'>Saves 5 mins</h1>
-                    </div>
-                    <div className='border-b-[0.5px] border-[#e3dddd] w-[600px] flex justify-center items-center mx-auto'></div>
-                </div>
-                <div>
-                    <div className='flex items-center justify-between  p-[17px]'>
-                        <div className='flex items-center gap-[16px]'>
-                            <div className="bg-black p-[3px] w-[15.7px] h-[15.7px]  rounded-2xl flex items-center justify-center">
-                                <img src={automationsImg} alt="" className="" />
+                        <div>
+                            <div className='flex items-center justify-between  p-[17px]'>
+                                <div className='flex items-center gap-[16px]'>
+                                    <div className="bg-black p-[3px] w-[15.7px] h-[15.7px]  rounded-2xl flex items-center justify-center">
+                                        <img src={automationsImg} alt="" className="" />
+                                    </div>
+                                    <h1 className='text-[13px] font-canvasans text-[#757575]'>Let my next appointment know I’ll be late</h1>
+                                </div>
+                                <h1 className='text-[10px] font-canvasans text-[#757575]'>Saves 5 mins</h1>
                             </div>
-                            <h1 className='text-[13px] font-canvasans text-[#757575]'>Let my next appointment know I’ll be late</h1>
                         </div>
-                        <h1 className='text-[10px] font-canvasans text-[#757575]'>Saves 5 mins</h1>
                     </div>
-                </div>
-            </div>}
+                }
+            </div>
             <div className='flex items-center space-x-[15px]'>
                 <button
                     className="text-white rounded-xl w-[149px] h-[39.1px] font-canvasans      text-[9.7px] font-semibold"

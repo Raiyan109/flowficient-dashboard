@@ -3,9 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  /* background: radial-gradient(circle, hsla(0, 4%, 86%, 1) 50%, hsla(0, 0%, 94%, 1) 100%); */
-}
+
 
 /* Canva Sans Bold and Italic */
 @font-face {
