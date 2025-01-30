@@ -5,10 +5,13 @@ import { GoClock } from "react-icons/go";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { useState } from "react";
 import QuickActionModal from "./QuickActionModal";
+import BookingDetailsModal from "./BookingDetailsModal";
 
 
 const AllBookings = () => {
     const [showQuickActions, setShowQuickActions] = useState(false)
+    const [showBookingDetailsModal, setShowBookingDetailsModal] = useState(false)
+
     const bookings = [
         {
             id: 1,
@@ -58,6 +61,12 @@ const AllBookings = () => {
 
     const toggleQuickActions = () => {
         setShowQuickActions(!showQuickActions)
+    }
+
+    const toggleBookingDetailsModal = () => {
+        console.log('booking detials page clicked');
+
+        setShowBookingDetailsModal(!showBookingDetailsModal)
     }
 
     return (
@@ -257,7 +266,7 @@ const AllBookings = () => {
                                     <div className="bg-black rounded-full">
                                         <MdElectricBolt className="text-white text-xs" />
                                     </div>
-                                    <BsThreeDotsVertical />
+                                    <BsThreeDotsVertical onClick={toggleBookingDetailsModal} />
                                 </div>
                             </div>
                         </div>
@@ -439,6 +448,15 @@ const AllBookings = () => {
                 showQuickActions && (
                     <div className="fixed inset-0 bg-gray-100 bg-opacity-30 z-50"> {/* Light grayish overlay */}
                         <QuickActionModal toggleQuickActions={toggleQuickActions} />
+                    </div>
+                )
+            }
+
+            {/* BookingDetails Modal */}
+            {
+                showBookingDetailsModal && (
+                    <div className="fixed inset-0 bg-gray-100 bg-opacity-30 z-50"> {/* Light grayish overlay */}
+                        <BookingDetailsModal toggleBookingDetailsModal={toggleBookingDetailsModal} />
                     </div>
                 )
             }
