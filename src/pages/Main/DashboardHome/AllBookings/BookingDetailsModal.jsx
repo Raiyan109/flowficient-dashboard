@@ -3,7 +3,7 @@ import { MdOutlineSync } from "react-icons/md";
 
 const BookingDetailsModal = ({ toggleBookingDetailsModal }) => {
     return (
-        <div className="h-screen fixed inset-0 bg-gray-100 bg-opacity-30 flex justify-center items-center z-10">
+        <div className="h-screen fixed inset-0 bg-gray-100 bg-opacity-30 flex justify-center items-center">
             <div className="bg-[#fafafa] h-[535.4px] w-[507.7px] rounded-[25px] space-y-[25px]">
                 <div className="flex justify-between">
                     <div className="flex items-center gap-[12px] pl-[31px] pt-[36px]">

@@ -450,7 +450,7 @@ const AllBookings = () => {
             {/* QuickActions Modal */}
             {
                 showQuickActions && (
-                    <div className="fixed inset-0 bg-gray-100 bg-opacity-30 z-50"> {/* Light grayish overlay */}
+                    <div className="fixed inset-0 bg-gray-100 bg-opacity-30"> {/* Light grayish overlay */}
                         <QuickActionModal toggleQuickActions={toggleQuickActions} />
                     </div>
                 )
@@ -459,7 +459,7 @@ const AllBookings = () => {
             {/* BookingDetails Modal */}
             {
                 showBookingDetailsModal && (
-                    <div className="fixed inset-0 bg-gray-100 bg-opacity-30 z-50"> {/* Light grayish overlay */}
+                    <div className="fixed inset-0 bg-gray-100 bg-opacity-30"> {/* Light grayish overlay */}
                         <BookingDetailsModal toggleBookingDetailsModal={toggleBookingDetailsModal} />
                     </div>
                 )
@@ -468,7 +468,7 @@ const AllBookings = () => {
             {/* FlowkiAiModal Modal */}
             {
                 showFlowkiAiModal && (
-                    <div className="fixed inset-0 bg-gray-100 bg-opacity-30 z-50"> {/* Light grayish overlay */}
+                    <div className="fixed inset-0 bg-gray-100 bg-opacity-30"> {/* Light grayish overlay */}
                         <BookingFlowkiModal toggleFlowkiAiModal={toggleFlowkiAiModal} />
                     </div>
                 )

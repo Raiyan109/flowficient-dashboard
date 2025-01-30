@@ -3,7 +3,7 @@ import whiteAutomationsImg from '../../../../assets/white-automation.png'
 const QuickActionModal = ({ toggleQuickActions }) => {
     return (
         <div
-            className="fixed top-10 right-6 min-h-[730.1px] w-[449.6px] rounded-[33px] z-50 flex flex-col justify-between bg-white"
+            className="fixed top-10 right-6 min-h-[730.1px] w-[449.6px] rounded-[33px] flex flex-col justify-between bg-white"
         >
             <div className='flex justify-center  flex-col gap-[24px] pt-[27px]'>
 

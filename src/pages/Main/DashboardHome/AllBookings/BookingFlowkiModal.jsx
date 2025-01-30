@@ -51,7 +51,7 @@ const BookingFlowkiModal = () => {
 
     return (
         <div
-            className="fixed top-10 right-6 h-[757.3px] w-[651.9px] rounded-[33px] z-50 "
+            className="fixed top-10 right-6 h-[757.3px] w-[651.9px] rounded-[33px]"
             style={{
                 background: 'linear-gradient(225deg, #ffffff, #FEECFE)', // Linear gradient background
             }}

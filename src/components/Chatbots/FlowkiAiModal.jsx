@@ -75,7 +75,7 @@ const FlowkiAiModal = ({ toggleNotifications }) => {
 
     return (
         <div
-            className="fixed top-10 right-6 h-[757.3px] w-[651.9px] rounded-[33px] z-50 flex flex-col justify-between"
+            className="fixed top-10 right-6 h-[757.3px] w-[651.9px] rounded-[33px] flex flex-col justify-between"
             style={{
                 background: 'linear-gradient(225deg, #F3F3F3, #FEECFE)', // Linear gradient background
             }}

@@ -126,12 +126,14 @@ const bookings = [
 const DashboardHome = () => {
     return (
         <div className="flex items-center gap-5 pt-10">
-            <div className=" h-[574.9px] rounded-2xl w-[356.1px]" style={{
-                backgroundColor: 'rgba(240, 240, 240, 0.6)', // Whitish and semi-transparent
-                // backdropFilter: 'blur(10px)', // Frosted glass effect
-                // WebkitBackdropFilter: 'blur(10px)', // Safari support
-            }}>
-                <div className="flex justify-between items-center p-6">
+            <div className=" h-[574.9px] rounded-[25px] w-[356.1px]"
+                style={{
+                    backgroundColor: 'rgba(250, 250, 250, 0.6)', // Whitish and semi-transparent
+                    // backdropFilter: 'blur(10px)', // Frosted glass effect
+                    // WebkitBackdropFilter: 'blur(10px)', // Safari support
+                }}
+            >
+                <div className="flex justify-between items-center pt-[22px] px-[20px] pb-[40px]">
                     <h1 className="text-[24px] font-canvasans font-bold">Chats</h1>
                     <div className="flex items-center gap-4">
                         <div className="flex items-center gap-2">
@@ -149,7 +151,7 @@ const DashboardHome = () => {
 
                 {chats && chats.length > 0 ? (
                     chats.map((chat) => (
-                        <div className="py-2 px-4 rounded-2xl bg-white mb-5 mx-6">
+                        <div className="py-2 px-4 rounded-[13px] bg-white mb-5 mx-6">
                             <div className="flex justify-between pt-1">
                                 <h1 className=" font-canvasans text-[8.7px]">{chat.name}</h1>
                                 <div className=" rounded-full flex items-center justify-center gap-1">
@@ -187,12 +189,12 @@ const DashboardHome = () => {
             </div>
 
             {/* Bookings */}
-            <div className="h-[574.9px] rounded-2xl w-[356.1px]" style={{
-                backgroundColor: 'rgba(240, 240, 240, 0.6)', // Whitish and semi-transparent
+            <div className="h-[574.9px] rounded-[25px] w-[356.1px] bg-[#f1f1f1]" style={{
+                backgroundColor: 'rgba(250, 250, 250, 0.6)', // Whitish and semi-transparent
                 // backdropFilter: 'blur(10px)', // Frosted glass effect
                 // WebkitBackdropFilter: 'blur(10px)', // Safari support
             }}>
-                <div className=" flex justify-between items-center p-6">
+                <div className=" flex justify-between items-center  pt-[22px] px-[20px] pb-[40px]">
                     <h1 className="text-[24px] font-canvasans font-bold">Bookings</h1>
                     <div className="flex items-center gap-4">
                         <div className="flex items-center gap-2">
@@ -209,7 +211,7 @@ const DashboardHome = () => {
                 </div>
                 {bookings && bookings.length > 0 ? (
                     bookings.map((booking) => (
-                        <div className="py-2 px-4 rounded-2xl bg-white mb-5 mx-6 flex justify-between gap-4">
+                        <div className="py-2 px-4 rounded-[13px] bg-white mb-5 mx-6 flex justify-between gap-4">
                             <div className="flex gap-5">
                                 <div className="flex flex-col justify-center items-center -space-y-2">
                                     <h1 className="font-canvasans text-[12.9px]">{booking.day}</h1>
