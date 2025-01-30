@@ -4,12 +4,82 @@ import { RiNewsLine } from "react-icons/ri";
 import { IoIosCheckboxOutline } from "react-icons/io";
 import whatsapp from '../../../../assets/Whatsapp.png'
 import gmail from '../../../../assets/Gmail.png'
+import { LuArrowUpDown } from "react-icons/lu";
+import { CiSearch } from 'react-icons/ci';
+import { IoLogoWhatsapp } from "react-icons/io";
+import { SiGmail } from "react-icons/si";
+import { BsGlobe } from "react-icons/bs";
+import { GiElectric } from "react-icons/gi";
+import spark from '../../../../assets/sparkling-fill.png'
+
+const chats = [
+    {
+        id: 1,
+        name: 'David Doe',
+        lastMessage: 'Yes, we look forward to seeing you',
+        time: '5 mins ago',
+        whatsAppIcon: IoLogoWhatsapp,
+        gmailIcon: SiGmail,
+        globeIcon: BsGlobe,
+        automationIcon: spark
+    },
+    {
+        id: 2,
+        name: 'David Doe',
+        lastMessage: 'Yes, we look forward to seeing you',
+        time: '5 mins ago',
+        whatsAppIcon: IoLogoWhatsapp,
+        gmailIcon: SiGmail,
+        globeIcon: BsGlobe,
+        automationIcon: spark
+    },
+    {
+        id: 3,
+        name: 'David Doe',
+        lastMessage: 'Yes, we look forward to seeing you',
+        time: '5 mins ago',
+        whatsAppIcon: IoLogoWhatsapp,
+        gmailIcon: SiGmail,
+        globeIcon: BsGlobe,
+        automationIcon: spark
+    },
+    {
+        id: 4,
+        name: 'David Doe',
+        lastMessage: 'Yes, we look forward to seeing you',
+        time: '5 mins ago',
+        whatsAppIcon: IoLogoWhatsapp,
+        gmailIcon: SiGmail,
+        globeIcon: BsGlobe,
+        automationIcon: spark
+    },
+    {
+        id: 5,
+        name: 'David Doe',
+        lastMessage: 'Yes, we look forward to seeing you',
+        time: '5 mins ago',
+        whatsAppIcon: IoLogoWhatsapp,
+        gmailIcon: SiGmail,
+        globeIcon: BsGlobe,
+        automationIcon: spark
+    },
+    {
+        id: 6,
+        name: 'David Doe',
+        lastMessage: 'Yes, we look forward to seeing you',
+        time: '5 mins ago',
+        whatsAppIcon: IoLogoWhatsapp,
+        gmailIcon: SiGmail,
+        globeIcon: BsGlobe,
+        automationIcon: spark
+    },
+]
 
 const AllChats = () => {
     return (
         <div>
             <div className='bg-[#f1f1f1] w-[1122.6px] h-[646px] rounded-[25px] flex items-start'>
-                <div className="w-[219px] border-r border-[#e3dddd] my-4 h-full pl-[29px] space-y-[23px]">
+                <div className="w-[219px] border-r border-[#e3dddd] h-full pl-[29px] space-y-[23px]">
                     <div className=''>
                         <div className='flex items-center gap-[83px] pr-[13px]'>
                             <div className="p-2 hover:bg-gray-100 cursor-pointer text-[10px] font-gordita flex items-center gap-[7px]">
@@ -78,7 +148,82 @@ const AllChats = () => {
                     </div>
                 </div>
 
-                <div className="w-[352px] border-r border-[#e3dddd] my-4 h-full"></div>
+                <div className="w-[352px] border-r border-[#e3dddd]  h-full">
+                    <div className="flex justify-between items-center p-6">
+                        <h1 className="text-[24px] font-canvasans font-bold">Chats</h1>
+                        <div className="flex items-center gap-4">
+                            <div className="flex items-center gap-2">
+                                <div className="rounded-md w-[27.3px] h-[25.8px] bg-white font-canvasans font-semibold flex items-center justify-center">1</div>
+                                <div className="rounded-md w-[27.3px] h-[25.8px] bg-black text-white font-canvasans font-semibold  flex items-center justify-center">2</div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div className='flex justify-end'>
+                        <div className="relative flex items-center gap-1">
+                            <LuArrowUpDown className='text-gray-600 text-xs' />
+                            <select className="appearance-none bg-transparent focus:outline-none text-[#222222] text-[9.7px] font-canvasans pr-4 flex items-center">
+                                <option value="option1">Newest</option>
+                                <option value="option2">Option 2</option>
+                                <option value="option3">Option 3</option>
+                            </select>
+                            <span className="absolute inset-y-0 right-0 flex items-center pr-1 pointer-events-none">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth="2"
+                                    stroke="#3c3c3c"
+                                    className="w-2 h-2"
+                                >
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+
+                    {/* Input */}
+                    <div className='flex justify-center mt-[11px]'>
+                        <div className="relative bg-white rounded-[13px] w-[320px] h-[29px]" >
+                            <label htmlFor="Search" className="sr-only"> Search </label>
+                            <span className="absolute inset-y-0 start-1 grid w-10 place-content-center" >
+                                <CiSearch size={18} />
+                            </span>
+                            <input
+                                type="text"
+                                id="Search"
+                                placeholder="Search"
+                                className="bg-transparent py-[1px] border-none outline-none pl-12 placeholder:text-gray-500 placeholder:font-canvasans placeholder:text-[11px] text-white font-canvasans"
+
+                            />
+                        </div>
+                    </div>
+
+                    {/* Chats */}
+                    <div className='mt-[13px]'>
+                        {chats.map((chat) => (
+                            <div className="py-2 px-4 rounded-2xl bg-white mb-5 mx-6">
+                                <div className="flex justify-between pt-1">
+                                    <h1 className=" font-canvasans text-[8.7px]">{chat.name}</h1>
+                                    <div className=" rounded-full flex items-center justify-center gap-1">
+                                        <div className="bg-[#757575] rounded-full p-[3px]">
+                                            {/* <chat.automationIcon size={5} fill="white" className="" /> */}
+                                            <img src={chat.automationIcon} alt="" className='w-2 h-2' />
+                                        </div>
+                                        <div>
+                                            <chat.whatsAppIcon size={13} fill="lightGreen" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="flex justify-between items-start">
+                                    <h1 className="font-canvasans text-[8.9px] font-thin">{chat.lastMessage}</h1>
+                                    <p className="text-[#757575] text-[6.9px] self-end">{chat.time}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
 
                 <div className="w-[571px]"></div>
             </div>
