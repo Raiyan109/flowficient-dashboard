@@ -23,7 +23,8 @@ const Main = () => {
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
         }}>
-            <div className="absolute inset-0 bg-gradient-to-b from-[#636262] to-[#bdbdbd] opacity-20 z-0" />
+            {/* bg-gradient-to-b from-[#636262] to-[#bdbdbd] */}
+            <div className="absolute inset-0  main-gradient opacity-20 z-0" />
             {/* z-10 */}
             <div className={`w-full z-0 transition-all ${isScrolled
                 ? "sticky top-0 bg-white shadow-md p-0"

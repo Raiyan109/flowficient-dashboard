@@ -100,7 +100,7 @@ const Header = () => {
                     </div>
                 </div>
             </div>}
-            <div className='flex items-center space-x-6'>
+            <div className='flex items-center space-x-[15px]'>
                 <button
                     className="text-white rounded-xl w-[149px] h-[39.1px] font-canvasans      text-[9.7px] font-semibold"
                     style={{
@@ -109,18 +109,18 @@ const Header = () => {
                 >
                     2 000 credits
                 </button>
-                <div className='bg-[#f1f1f1] rounded-full p-2'>
-                    <GoPersonFill size={18} />
+                <div className='flex items-center gap-[9px]'>
+                    <div className='bg-[#f1f1f1] rounded-full w-[39.1px] h-[39.1px] flex items-center justify-center'>
+                        <GoPersonFill className='w-[15.3px] h-[15.3px]' />
+                    </div>
+                    <div className='bg-[#f1f1f1] rounded-full w-[39.1px] h-[39.1px] flex items-center justify-center'>
+                        <MdElectricBolt className='w-[15.3px] h-[15.3px]' />
+                    </div>
+                    <div className='bg-[#f1f1f1] rounded-full w-[39.1px] h-[39.1px] flex items-center justify-center relative cursor-pointer' onClick={toggleNotifications}>
+                        <div className='bg-[#ff3131] text-[10px] font-semibold font-canvasans p-2 h-4 w-4 rounded-full flex items-center justify-center  absolute -top-2 right-0 text-white'>1</div>
+                        <IoIosNotifications className='w-[15.3px] h-[15.3px]' />
+                    </div>
                 </div>
-                <div className='bg-[#f1f1f1] rounded-full p-2'>
-                    <MdElectricBolt size={18} />
-                </div>
-                <div className='bg-[#f1f1f1] rounded-full p-2 relative cursor-pointer' onClick={toggleNotifications}>
-                    <div className='bg-[#ff3131] text-[10px] font-semibold font-canvasans p-2 h-4 w-4 rounded-full flex items-center justify-center  absolute -top-2 right-0 text-white'>1</div>
-                    <IoIosNotifications size={18} />
-                </div>
-
-
             </div>
 
             {/* Notification Modal */}

@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  /* background: radial-gradient(circle, hsla(0, 4%, 86%, 1) 50%, hsla(0, 0%, 94%, 1) 100%); */
+}
+
 /* Canva Sans Bold and Italic */
 @font-face {
   font-family: 'Canva Sans';
@@ -31,6 +35,11 @@
   src: url('./assets/fonts/Gordita-Bold.otf') format('opentype');
   font-weight: bold;
   font-style: normal;
+}
+
+.main-gradient {
+  /* background: radial-gradient(circle, hsla(0, 4%, 86%, 1) 50%, hsla(0, 0%, 94%, 1) 100%); */
+  background: radial-gradient(circle, hsla(0, 0%, 54%, 1) 50%, hsla(0, 4%, 62%, 1) 100%);
 }
 
 .styled-select {
