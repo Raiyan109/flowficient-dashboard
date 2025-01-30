@@ -120,7 +120,7 @@ const AllChats = () => {
                                 0
                             </div>
                         </div>
-                        <div className='flex items-center gap-[53px] pr-[13px]'>
+                        <div className='flex items-center gap-[41px] pr-[13px]'>
                             <div className="p-2 hover:bg-gray-100 cursor-pointer text-[10px] font-gordita flex items-center gap-[7px]">
                                 <IoMailOpenOutline className='w-[15.7px] h-[15.7px]' />
                                 <h1 className='text-[8.7px] font-canvasans'>Open Tickets</h1>
@@ -129,7 +129,7 @@ const AllChats = () => {
                                 2
                             </div>
                         </div>
-                        <div className='flex items-center gap-[43px] pr-[13px]'>
+                        <div className='flex items-center gap-[32px] pr-[13px]'>
                             <div className="p-2 hover:bg-gray-100 cursor-pointer text-[10px] font-gordita flex items-center gap-[7px]">
                                 <RiNewsLine className='w-[15.7px] h-[15.7px]' />
                                 <h1 className='text-[8.7px] font-canvasans'>Assigned to me</h1>
@@ -143,20 +143,13 @@ const AllChats = () => {
                                 <IoIosCheckboxOutline className='w-[15.7px] h-[15.7px]' />
                                 <h1 className='text-[8.7px] font-canvasans'>Closed</h1>
                             </div>
-                            {/* <div className='w-[16.8px] h-[15.6px] bg-white rounded-[4px] font-canvasans text-[6.2px] font-bold flex items-center justify-center'>
-                            0
-                        </div> */}
-                        </div>
-
-                        <div>
-
                         </div>
                     </div>
 
                     <div>
                         <h1 className='text-[8.7px] font-canvasans font-semibold pl-[10px] pb-[8px]'>Channels</h1>
                         <div>
-                            <div className='flex items-center gap-[63px] pr-[13px] pb-[8px]'>
+                            <div className='flex items-center gap-[63px] pr-[13px]'>
                                 <div className="p-2 hover:bg-gray-100 cursor-pointer text-[10px] font-gordita flex items-center gap-[7px]">
                                     <img src={whatsapp} alt="" className='w-[15px] h-[15px]' />
                                     <h1 className='text-[8.7px] font-canvasans'>WhatsApp</h1>
@@ -165,9 +158,9 @@ const AllChats = () => {
                                     0
                                 </div>
                             </div>
-                            <div className='flex items-center gap-[83px] pr-[13px]'>
+                            <div className='flex items-center gap-[83px] pr-[13px]  pl-[2px]'>
                                 <div className="p-2 hover:bg-gray-100 cursor-pointer text-[10px] font-gordita flex items-center gap-[7px]">
-                                    <img src={gmail} alt="" className='w-[15px] h-[15px]' />
+                                    <img src={gmail} alt="" className='w-[13px] h-[13px]' />
                                     <h1 className='text-[8.7px] font-canvasans'>Gmail</h1>
                                 </div>
                                 <div className='w-[16.8px] h-[15.6px] bg-white rounded-[4px] font-canvasans text-[6.2px] font-bold flex items-center justify-center'>
