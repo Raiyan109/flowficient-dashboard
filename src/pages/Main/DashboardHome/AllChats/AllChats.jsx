@@ -14,6 +14,7 @@ import spark from '../../../../assets/sparkling-fill.png'
 import { FaArrowUp } from 'react-icons/fa';
 import { RiSparklingFill } from "react-icons/ri";
 import { GoPersonFill } from "react-icons/go";
+import { useState } from 'react';
 
 const chats = [
     {
@@ -79,6 +80,31 @@ const chats = [
 ]
 
 const AllChats = () => {
+    const [isChatStarted, setIsChatStarted] = useState(false); // State to track if chat has started
+    const [userInput, setUserInput] = useState(''); // State to store user input
+    const [chatHistory, setChatHistory] = useState([]); // State to store chat history
+
+    // Function to handle user input submission
+    const handleSendMessage = () => {
+        if (userInput.trim()) {
+            // Add user message to chat history
+            setChatHistory(prev => [
+                ...prev,
+                { id: prev.length + 1, type: 'user', text: userInput }
+            ]);
+
+            // Simulate a bot response after a delay
+            setTimeout(() => {
+                setChatHistory(prev => [
+                    ...prev,
+                    { id: prev.length + 1, type: 'bot', text: 'This is a mock response from FlowKi AI.' }
+                ]);
+            }, 1000);
+
+            setUserInput(''); // Clear input field
+            setIsChatStarted(true); // Set chat as started
+        }
+    };
     return (
         <div>
             <div className='bg-[#f1f1f1] w-[1122.6px] h-[646px] rounded-[25px] flex items-start'>
@@ -232,6 +258,7 @@ const AllChats = () => {
 
                 {/* right part */}
                 <div className="w-[571px] px-[21px] pt-[24px]">
+                    {/* Header part */}
                     <div className='border-b '>
                         <div className='flex justify-between items-center'>
                             <div className='flex items-center gap-[6px]'>
@@ -280,10 +307,38 @@ const AllChats = () => {
                                 <h1 className='text-[#757575] font-canvasans text-[7.9px]'>Assigned to <span className='font-bold'>Naeem Hashim</span></h1>
                             </div>
                             <div>
-                                <button className='w-[87.6px] h-[21.9px] rounded-[6pc] bg-[#5e17eb] text-white font-canvasans text-[7.7px]'>Close Ticket</button>
+                                <button className='w-[87.6px] h-[21.9px] rounded-[6px] bg-[#5e17eb] text-white font-canvasans text-[7.7px]'>Close Ticket</button>
                             </div>
                         </div>
                     </div>
+
+                    {/* Chat part */}
+                    <div className='flex justify-center pt-[27px]'>
+                        <button className='w-[105px] h-[25.2px] rounded-full text-[8.5px] text-[#757575] bg-[#fafafa]  font-gordita'>17 Dec 2024</button>
+                    </div>
+                    <div className='w-full h-[500px] overflow-y-auto px-4'>
+                        {chatHistory && chatHistory.map((chat) => (
+                            <div
+                                key={chat.id}
+                                className={`flex ${chat.type === 'user' ? 'justify-start' : 'justify-end'} mb-4`}
+                            >
+                                <div
+                                    className={`max-w-[284.8px]  px-3 py-2 rounded-[12px] text-[8.5px] font-gordita ${chat.type === 'user'
+                                        ? 'bg-white text-black'
+                                        : 'text-white'
+                                        }`}
+                                    style={{
+                                        background: chat.type === 'bot'
+                                            ? 'radial-gradient(circle at 0% 0%, #5170ff, #d83bff)'
+                                            : undefined, // Use undefined to avoid overriding the className background
+                                    }}
+                                >
+                                    {chat.text}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
                     {/* Input */}
                     <div className="fixed bottom-12 p-4 w-[546.2px] h-[39.8px]">
                         <label htmlFor="Search" className="sr-only"> Search </label>
@@ -292,9 +347,9 @@ const AllChats = () => {
                             type="text"
                             id="Search"
                             placeholder="Let's chat"
-                            // value={userInput}
-                            // onChange={(e) => setUserInput(e.target.value)}
-                            // onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
+                            value={userInput}
+                            onChange={(e) => setUserInput(e.target.value)}
+                            onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
                             className="w-full border-gray-200 px-[25px] py-[17px] h-[39.8px] placeholder:font-canvasans placeholder:text-[#aaaaaa] placeholder:text-[11.7px] rounded-full"
                         />
 
@@ -315,13 +370,12 @@ const AllChats = () => {
                             </svg>
                             <span
                                 className="inset-y-0 grid place-content-center h-[26.4px] w-[26.4px] rounded-full cursor-pointer"
-                            // onClick={handleSendMessage}
                             >
                                 <RiSparklingFill style={{ fill: 'url(#gradient)' }} />
                             </span>
                             <span
                                 className=" inset-y-0 grid place-content-center bg-black h-[26.4px] w-[26.4px] rounded-full cursor-pointer"
-                            // onClick={handleSendMessage}
+                                onClick={handleSendMessage}
                             >
                                 <FaArrowUp color='white' />
                             </span>
