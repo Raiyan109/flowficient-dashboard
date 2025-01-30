@@ -35,6 +35,7 @@ const Main = () => {
                 <div className="relative z-10">
                     <Sidebar />
                 </div>
+                {/* z-0 */}
                 <div className="flex-1 pl-1 z-0">
 
                     <div className="p-[24px] pt-0.5 mx-auto max-w-[1380px]">

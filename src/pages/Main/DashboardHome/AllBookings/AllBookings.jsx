@@ -6,11 +6,13 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { useState } from "react";
 import QuickActionModal from "./QuickActionModal";
 import BookingDetailsModal from "./BookingDetailsModal";
+import BookingFlowkiModal from "./BookingFlowkiModal";
 
 
 const AllBookings = () => {
     const [showQuickActions, setShowQuickActions] = useState(false)
     const [showBookingDetailsModal, setShowBookingDetailsModal] = useState(false)
+    const [showFlowkiAiModal, setShowFlowkiAiModal] = useState(false)
 
     const bookings = [
         {
@@ -64,9 +66,11 @@ const AllBookings = () => {
     }
 
     const toggleBookingDetailsModal = () => {
-        console.log('booking detials page clicked');
-
         setShowBookingDetailsModal(!showBookingDetailsModal)
+    }
+
+    const toggleFlowkiAiModal = () => {
+        setShowFlowkiAiModal(!showFlowkiAiModal)
     }
 
     return (
@@ -208,9 +212,9 @@ const AllBookings = () => {
                                 </div>
                                 <div className="flex gap-[12px]">
                                     <div className="bg-black rounded-full">
-                                        <MdElectricBolt className="text-white text-xs" />
+                                        <MdElectricBolt className="text-white text-xs" onClick={toggleFlowkiAiModal} />
                                     </div>
-                                    <BsThreeDotsVertical />
+                                    <BsThreeDotsVertical onClick={toggleBookingDetailsModal} />
                                 </div>
                             </div>
                         </div>
@@ -457,6 +461,15 @@ const AllBookings = () => {
                 showBookingDetailsModal && (
                     <div className="fixed inset-0 bg-gray-100 bg-opacity-30 z-50"> {/* Light grayish overlay */}
                         <BookingDetailsModal toggleBookingDetailsModal={toggleBookingDetailsModal} />
+                    </div>
+                )
+            }
+
+            {/* FlowkiAiModal Modal */}
+            {
+                showFlowkiAiModal && (
+                    <div className="fixed inset-0 bg-gray-100 bg-opacity-30 z-50"> {/* Light grayish overlay */}
+                        <BookingFlowkiModal toggleFlowkiAiModal={toggleFlowkiAiModal} />
                     </div>
                 )
             }
