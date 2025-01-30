@@ -11,6 +11,8 @@ import { SiGmail } from "react-icons/si";
 import { BsGlobe } from "react-icons/bs";
 import { GiElectric } from "react-icons/gi";
 import spark from '../../../../assets/sparkling-fill.png'
+import { FaArrowUp } from 'react-icons/fa';
+import { RiSparklingFill } from "react-icons/ri";
 
 const chats = [
     {
@@ -79,7 +81,8 @@ const AllChats = () => {
     return (
         <div>
             <div className='bg-[#f1f1f1] w-[1122.6px] h-[646px] rounded-[25px] flex items-start'>
-                <div className="w-[219px] border-r border-[#e3dddd] h-full pl-[29px] space-y-[23px]">
+                {/* left part */}
+                <div className="w-[219px] border-r border-[#e3dddd] h-full pl-[29px] space-y-[23px] p-5">
                     <div className=''>
                         <div className='flex items-center gap-[83px] pr-[13px]'>
                             <div className="p-2 hover:bg-gray-100 cursor-pointer text-[10px] font-gordita flex items-center gap-[7px]">
@@ -148,6 +151,7 @@ const AllChats = () => {
                     </div>
                 </div>
 
+                {/* middle part */}
                 <div className="w-[352px] border-r border-[#e3dddd]  h-full">
                     <div className="flex justify-between items-center p-6">
                         <h1 className="text-[24px] font-canvasans font-bold">Chats</h1>
@@ -160,7 +164,7 @@ const AllChats = () => {
                         </div>
                     </div>
 
-                    <div className='flex justify-end'>
+                    <div className='flex justify-end pr-[17px]'>
                         <div className="relative flex items-center gap-1">
                             <LuArrowUpDown className='text-gray-600 text-xs' />
                             <select className="appearance-none bg-transparent focus:outline-none text-[#222222] text-[9.7px] font-canvasans pr-4 flex items-center">
@@ -201,9 +205,9 @@ const AllChats = () => {
                     </div>
 
                     {/* Chats */}
-                    <div className='mt-[13px]'>
+                    <div className='mt-[13px] flex justify-center flex-col items-center'>
                         {chats.map((chat) => (
-                            <div className="py-2 px-4 rounded-2xl bg-white mb-5 mx-6">
+                            <div className="py-2 px-4 rounded-2xl bg-white mb-5 mx-6 w-[320px]">
                                 <div className="flex justify-between pt-1">
                                     <h1 className=" font-canvasans text-[8.7px]">{chat.name}</h1>
                                     <div className=" rounded-full flex items-center justify-center gap-1">
@@ -225,7 +229,52 @@ const AllChats = () => {
                     </div>
                 </div>
 
-                <div className="w-[571px]"></div>
+                {/* right part */}
+                <div className="w-[571px]">
+                    {/* Input */}
+                    <div className="fixed bottom-12 p-4 w-[546.2px] h-[39.8px]">
+                        <label htmlFor="Search" className="sr-only"> Search </label>
+
+                        <input
+                            type="text"
+                            id="Search"
+                            placeholder="Let's chat"
+                            // value={userInput}
+                            // onChange={(e) => setUserInput(e.target.value)}
+                            // onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
+                            className="w-full border-gray-200 px-[25px] py-[17px] h-[39.8px] placeholder:font-canvasans placeholder:text-[#aaaaaa] placeholder:text-[11.7px] rounded-full"
+                        />
+
+                        <div className='flex items-center gap-[13px] absolute right-7 top-[23px]'>
+                            {/* <span
+                                className=" inset-y-0 grid place-content-center  h-[26.4px] w-[26.4px] rounded-full cursor-pointer"
+                            // onClick={handleSendMessage}
+                            >
+                                <RiSparklingFill color='black' />
+                            </span> */}
+                            <svg width="0" height="0">
+                                <defs>
+                                    <radialGradient id="gradient" cx="0%" cy="0%" r="100%" fx="0%" fy="0%">
+                                        <stop offset="0%" style={{ stopColor: '#5170ff' }} />
+                                        <stop offset="100%" style={{ stopColor: '#d83bff' }} />
+                                    </radialGradient>
+                                </defs>
+                            </svg>
+                            <span
+                                className="inset-y-0 grid place-content-center h-[26.4px] w-[26.4px] rounded-full cursor-pointer"
+                            // onClick={handleSendMessage}
+                            >
+                                <RiSparklingFill style={{ fill: 'url(#gradient)' }} />
+                            </span>
+                            <span
+                                className=" inset-y-0 grid place-content-center bg-black h-[26.4px] w-[26.4px] rounded-full cursor-pointer"
+                            // onClick={handleSendMessage}
+                            >
+                                <FaArrowUp color='white' />
+                            </span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     )
