@@ -32,6 +32,7 @@ import Knowledgebase from "../pages/Main/DashboardHome/Knowledgebase/Knowledgeba
 import InternalKB from "../pages/Main/DashboardHome/Knowledgebase/InternalKB";
 import WaitingList from "../pages/Main/DashboardHome/WaitingList/WaitingList";
 import AllBookings from "../pages/Main/DashboardHome/AllBookings/AllBookings";
+import AllChats from "../pages/Main/DashboardHome/AllChats/AllChats";
 
 
 export const dashboardItems = [
@@ -58,6 +59,12 @@ export const dashboardItems = [
         path: "allBookings",
         icon: TbCoin,
         element: <AllBookings />,
+    },
+    {
+        name: "All Chats",
+        path: "allChats",
+        icon: TbCoin,
+        element: <AllChats />,
     },
     {
         name: "Automations",

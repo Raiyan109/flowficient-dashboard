@@ -140,7 +140,9 @@ const DashboardHome = () => {
                         </div>
                         <div className="border border-[#b9b9b9] p-1 rounded-full">
                             {/* <BsArrowsAngleExpand className="text-[#b9b9b9] text-xl" /> */}
-                            <img src={arrowImg} alt="" />
+                            <Link to='/allChats'>
+                                <img src={arrowImg} alt="" />
+                            </Link>
                         </div>
                     </div>
                 </div>
