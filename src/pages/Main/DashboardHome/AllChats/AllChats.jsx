@@ -13,6 +13,7 @@ import { GiElectric } from "react-icons/gi";
 import spark from '../../../../assets/sparkling-fill.png'
 import { FaArrowUp } from 'react-icons/fa';
 import { RiSparklingFill } from "react-icons/ri";
+import { GoPersonFill } from "react-icons/go";
 
 const chats = [
     {
@@ -230,7 +231,59 @@ const AllChats = () => {
                 </div>
 
                 {/* right part */}
-                <div className="w-[571px]">
+                <div className="w-[571px] px-[21px] pt-[24px]">
+                    <div className='border-b '>
+                        <div className='flex justify-between items-center'>
+                            <div className='flex items-center gap-[6px]'>
+                                <img src={whatsapp} alt="" />
+                                <h1 className='text-[11px] font-bold font-gordita'>David doe</h1>
+                            </div>
+                            {/* Button and icons */}
+                            <div className='flex items-center gap-[33px]'>
+                                {/* gradient button */}
+                                <button
+                                    className="relative rounded-md text-[9px] p-[1px] overflow-hidden"
+                                    style={{
+                                        background: 'radial-gradient(circle at 0% 0%, #5170ff, #d83bff)', // Gradient for the border
+                                    }}
+                                >
+                                    <div
+                                        className="rounded-[5px] flex items-center justify-center w-[70px] h-[13px] text-[7.4px]"
+                                        style={{
+                                            background: 'white', // Background inside the button
+                                        }}
+                                    >
+                                        <span
+                                            style={{
+                                                background: 'radial-gradient(circle at 0% 0%, #5170ff, #d83bff)', // Gradient text
+                                                WebkitBackgroundClip: 'text',
+                                                WebkitTextFillColor: 'transparent',
+                                            }}
+                                        >
+                                            +27 83 620 7199
+                                        </span>
+                                    </div>
+                                </button>
+                                <div className='flex items-center gap-[12px]'>
+                                    <GiElectric className='text-[#757575]' />
+                                    <RiSparklingFill className='text-[#757575]' />
+                                </div>
+                            </div>
+                        </div>
+                        {/* Paragraph */}
+                        <h1 className='font-canvasans text-[8.9px] pt-[19px] px-[26px]'>David is trying to find a suitable slot! David prefers the Constantia practice, selected Dr. A. Parker, is 23yrs old and wants to have a hair transplant</h1>
+
+                        {/* Ticket part */}
+                        <div className='flex justify-between items-center pt-[26px] pb-[15px] px-[26px]'>
+                            <div className='flex items-center gap-[9px]'>
+                                <GoPersonFill className='text-[#757575] text-[7.9px]' />
+                                <h1 className='text-[#757575] font-canvasans text-[7.9px]'>Assigned to <span className='font-bold'>Naeem Hashim</span></h1>
+                            </div>
+                            <div>
+                                <button className='w-[87.6px] h-[21.9px] rounded-[6pc] bg-[#5e17eb] text-white font-canvasans text-[7.7px]'>Close Ticket</button>
+                            </div>
+                        </div>
+                    </div>
                     {/* Input */}
                     <div className="fixed bottom-12 p-4 w-[546.2px] h-[39.8px]">
                         <label htmlFor="Search" className="sr-only"> Search </label>
