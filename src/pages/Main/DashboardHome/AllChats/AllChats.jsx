@@ -14,7 +14,7 @@ import spark from '../../../../assets/sparkling-fill.png'
 import { FaArrowUp } from 'react-icons/fa';
 import { RiSparklingFill } from "react-icons/ri";
 import { GoPersonFill } from "react-icons/go";
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const chats = [
     {
@@ -83,6 +83,10 @@ const AllChats = () => {
     const [isChatStarted, setIsChatStarted] = useState(false); // State to track if chat has started
     const [userInput, setUserInput] = useState(''); // State to store user input
     const [chatHistory, setChatHistory] = useState([]); // State to store chat history
+    const [showInputButton, setShowInputButton] = useState(false)
+    const [showRegeneratedSection, setShowRegeneratedSection] = useState(false)
+    const inputRef = useRef(null);
+    const regenerateButtonRef = useRef(null);
 
     // Function to handle user input submission
     const handleSendMessage = () => {
@@ -104,6 +108,39 @@ const AllChats = () => {
             setUserInput(''); // Clear input field
             setIsChatStarted(true); // Set chat as started
         }
+    };
+
+    // Handle clicks outside the input
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (
+                inputRef.current &&
+                !inputRef.current.contains(event.target) &&
+                regenerateButtonRef.current &&
+                !regenerateButtonRef.current.contains(event.target)
+            ) {
+                setShowInputButton(false); // Collapse the input
+            }
+        };
+
+        // Add event listener for outside clicks
+        document.addEventListener('mousedown', handleClickOutside);
+
+        // Cleanup the event listener
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+
+
+    const handleInputButton = () => {
+        setShowInputButton(true); // Expand the input
+    };
+
+    const handleRegeneratedSection = () => {
+        console.log('clicked in reg');
+
+        setShowRegeneratedSection(!showRegeneratedSection); // Expand the input
     };
     return (
         <div>
@@ -309,6 +346,8 @@ const AllChats = () => {
                     <div className='flex justify-center pt-[27px]'>
                         <button className='w-[105px] h-[25.2px] rounded-full text-[8.5px] text-[#757575] bg-[#fafafa]  font-gordita'>17 Dec 2024</button>
                     </div>
+
+                    {/* Chat heads */}
                     <div className='w-full h-[500px] overflow-y-auto px-4'>
                         {chatHistory && chatHistory.map((chat) => (
                             <div
@@ -334,38 +373,105 @@ const AllChats = () => {
 
                     {/* Input */}
                     <div className="fixed bottom-12 p-4 w-[546.2px] h-[39.8px]">
+
+                        {/* Regenerated Section */}
+                        {showRegeneratedSection && (
+                            <div
+                                className="absolute bottom-[80px] left-0 w-[517px] h-[305.7px] rounded-[21px] bg-white z-10 ml-[13px] mr-[13px]"
+                                style={{
+                                    border: '2px solid transparent', // Transparent border to hold the gradient
+                                    borderImage: 'linear-gradient(90deg, #ff66c4, #ffde59) 1',
+                                    borderRadius: '21px' // Gradient border
+                                }}
+                            >
+                                {/* Content for the regenerated section */}
+                                <p>Regenerated content goes here...</p>
+                            </div>
+                        )}
+
+                        {/* Input/Textarea */}
                         <label htmlFor="Search" className="sr-only"> Search </label>
 
-                        <input
-                            type="text"
+                        <textarea
+                            ref={inputRef}
                             id="Search"
                             placeholder="Let's chat"
                             value={userInput}
                             onChange={(e) => setUserInput(e.target.value)}
                             onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-                            className="w-full border-gray-200 px-[25px] py-[17px] h-[39.8px] placeholder:font-canvasans placeholder:text-[#aaaaaa] placeholder:text-[11.7px] rounded-full"
+                            className={`w-full border-gray-200 px-[25px] py-[17px] ${showInputButton ? 'h-[82.1px]' : 'h-[39.8px]'
+                                } placeholder:font-canvasans placeholder:text-[#aaaaaa] placeholder:text-[11.7px] ${showInputButton ? 'rounded-[12px]' : 'rounded-[38px]'
+                                } focus:border-[#aaaaaa] focus:outline-none transition-all duration-300 ease-in-out ${showInputButton ? 'transform -translate-y-[42.3px]' : ''
+                                }`}
+                            onClick={handleInputButton}
+                            style={{
+                                resize: 'none',
+                                overflow: 'hidden'
+                            }}
                         />
 
                         <div className='flex items-center gap-[13px] absolute right-7 top-[23px]'>
-                            {/* <span
-                                className=" inset-y-0 grid place-content-center  h-[26.4px] w-[26.4px] rounded-full cursor-pointer"
-                            // onClick={handleSendMessage}
-                            >
-                                <RiSparklingFill color='black' />
-                            </span> */}
-                            <svg width="0" height="0">
-                                <defs>
-                                    <radialGradient id="gradient" cx="0%" cy="0%" r="100%" fx="0%" fy="0%">
-                                        <stop offset="0%" style={{ stopColor: '#5170ff' }} />
-                                        <stop offset="100%" style={{ stopColor: '#d83bff' }} />
-                                    </radialGradient>
-                                </defs>
-                            </svg>
-                            <span
-                                className="inset-y-0 grid place-content-center h-[26.4px] w-[26.4px] rounded-full cursor-pointer"
-                            >
-                                <RiSparklingFill style={{ fill: 'url(#gradient)' }} />
-                            </span>
+                            {/* Conditional Regenarate button */}
+                            {showInputButton ? (
+                                <button
+                                    ref={regenerateButtonRef}
+                                    className="relative rounded-md  p-[1px] overflow-hidden"
+                                    style={{
+                                        background: 'radial-gradient(circle at 0% 0%, #5170ff, #d83bff)', // Gradient for the border
+                                    }}
+                                    aria-label="Contact number"
+                                    onClick={handleRegeneratedSection}
+                                >
+                                    <div
+                                        className="rounded-[5px] flex items-center justify-center w-[85.8px] h-[19.1px] text-[9px] font-canvasans"
+                                        style={{
+                                            background: 'white', // Background inside the button
+                                        }}
+                                    >
+                                        <div>
+                                            <svg width="0" height="0">
+                                                <defs>
+                                                    <radialGradient id="gradient" cx="0%" cy="0%" r="100%" fx="0%" fy="0%">
+                                                        <stop offset="0%" style={{ stopColor: '#5170ff' }} />
+                                                        <stop offset="100%" style={{ stopColor: '#d83bff' }} />
+                                                    </radialGradient>
+                                                </defs>
+                                            </svg>
+                                            <span
+                                                className="inset-y-0 grid place-content-center h-[26.4px] w-[26.4px] rounded-full cursor-pointer"
+                                            >
+                                                <RiSparklingFill style={{ fill: 'url(#gradient)' }} />
+                                            </span>
+                                        </div>
+                                        {/* <span
+                                            style={{
+                                                background: 'radial-gradient(circle at 0% 0%, #5170ff, #d83bff)', // Gradient text
+                                                WebkitBackgroundClip: 'text',
+                                                WebkitTextFillColor: 'transparent',
+                                            }}
+                                        >
+                                            Regenerate
+                                        </span> */}
+                                        <h1 className='text-[#5e17eb]'>Regenerate</h1>
+                                    </div>
+                                </button>
+                            ) : (
+                                <div>
+                                    <svg width="0" height="0">
+                                        <defs>
+                                            <radialGradient id="gradient" cx="0%" cy="0%" r="100%" fx="0%" fy="0%">
+                                                <stop offset="0%" style={{ stopColor: '#5170ff' }} />
+                                                <stop offset="100%" style={{ stopColor: '#d83bff' }} />
+                                            </radialGradient>
+                                        </defs>
+                                    </svg>
+                                    <span
+                                        className="inset-y-0 grid place-content-center h-[26.4px] w-[26.4px] rounded-full cursor-pointer"
+                                    >
+                                        <RiSparklingFill style={{ fill: 'url(#gradient)' }} />
+                                    </span>
+                                </div>
+                            )}
                             <span
                                 className=" inset-y-0 grid place-content-center bg-black h-[26.4px] w-[26.4px] rounded-full cursor-pointer"
                                 onClick={handleSendMessage}
@@ -376,7 +482,7 @@ const AllChats = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 
