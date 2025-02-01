@@ -3,18 +3,12 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const Bookings = () => {
     const [currentDate, setCurrentDate] = useState(new Date());
-    const [selectedMonth, setSelectedMonth] = useState(currentDate.getMonth());
-
-    const months = [
-        "January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December"
-    ];
+    const [selectedDate, setSelectedDate] = useState(null);
 
     const handlePrevMonth = () => {
         setCurrentDate(prevDate => {
             const newDate = new Date(prevDate);
             newDate.setMonth(newDate.getMonth() - 1);
-            setSelectedMonth(newDate.getMonth());
             return newDate;
         });
     };
@@ -23,9 +17,14 @@ const Bookings = () => {
         setCurrentDate(prevDate => {
             const newDate = new Date(prevDate);
             newDate.setMonth(newDate.getMonth() + 1);
-            setSelectedMonth(newDate.getMonth());
             return newDate;
         });
+    };
+
+    const handleDateClick = (day) => {
+        const newDate = new Date(currentDate);
+        newDate.setDate(day);
+        setSelectedDate(newDate);
     };
 
     const renderCalendar = () => {
@@ -41,8 +40,19 @@ const Bookings = () => {
         }
 
         for (let day = 1; day <= daysInMonth; day++) {
+            const isSelected =
+                selectedDate &&
+                selectedDate.getDate() === day &&
+                selectedDate.getMonth() === month &&
+                selectedDate.getFullYear() === year;
+
             calendarDays.push(
-                <div key={day} className="w-8 h-8 flex items-center justify-center">
+                <div
+                    key={day}
+                    onClick={() => handleDateClick(day)}
+                    className={`w-6 h-6 flex items-center justify-center rounded-md text-[10.7px]  font-canvasans cursor-pointer ${isSelected ? "bg-black text-white" : "text-[#3c3c3c]"
+                        }`}
+                >
                     {day}
                 </div>
             );
@@ -50,7 +60,6 @@ const Bookings = () => {
 
         return calendarDays;
     };
-
     return (
         <div className="flex h-screen">
             <div className="w-1/4 space-y-[10px]">
@@ -58,31 +67,20 @@ const Bookings = () => {
                     {/* Month Changer Slider */}
                     <div className="flex items-center justify-between mb-4">
                         <button onClick={handlePrevMonth} className="p-2">
-                            <FaChevronLeft className="text-gray-600" />
+                            <FaChevronLeft className="text-[#a6a6a6] text-xs" />
                         </button>
-                        <div className="flex items-center gap-2">
-                            {months.map((month, index) => (
-                                <div
-                                    key={month}
-                                    onClick={() => setSelectedMonth(index)}
-                                    className={`px-3 py-1 rounded-full cursor-pointer ${selectedMonth === index
-                                        ? "bg-black text-white"
-                                        : "bg-transparent text-gray-600"
-                                        }`}
-                                >
-                                    {month.slice(0, 3)}
-                                </div>
-                            ))}
+                        <div className="text-[8.6px] font-semibold font-montserrat">
+                            {currentDate.toLocaleString("default", { month: "long", year: "numeric" })}
                         </div>
                         <button onClick={handleNextMonth} className="p-2">
-                            <FaChevronRight className="text-gray-600" />
+                            <FaChevronRight className="text-[#a6a6a6] text-xs" />
                         </button>
                     </div>
 
                     {/* Calendar Grid */}
                     <div className="grid grid-cols-7 gap-1">
                         {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map(day => (
-                            <div key={day} className="text-center text-sm text-gray-600">
+                            <div key={day} className="text-center text-[7.4px] font-canvasans">
                                 {day}
                             </div>
                         ))}
