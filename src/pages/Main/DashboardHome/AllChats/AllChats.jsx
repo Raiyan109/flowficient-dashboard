@@ -377,15 +377,58 @@ const AllChats = () => {
                         {/* Regenerated Section */}
                         {showRegeneratedSection && (
                             <div
-                                className="absolute bottom-[80px] left-0 w-[517px] h-[305.7px] rounded-[21px] bg-white z-10 ml-[13px] mr-[13px]"
-                                style={{
-                                    border: '2px solid transparent', // Transparent border to hold the gradient
-                                    borderImage: 'linear-gradient(90deg, #ff66c4, #ffde59) 1',
-                                    borderRadius: '21px' // Gradient border
-                                }}
+                                className="absolute bottom-[40px] left-0 w-[517px] h-[305.7px] rounded-[21px] bg-white z-10 ml-[13px] mr-[13px]"
+
                             >
+                                {/* Gradient Border Pseudo-Element */}
+                                <div
+                                    style={{
+                                        position: 'absolute',
+                                        top: '-2px',
+                                        left: '-2px',
+                                        right: '-2px',
+                                        bottom: '-2px',
+                                        background: 'linear-gradient(90deg, #ff66c4, #ffde59)',
+                                        borderRadius: '21px',
+                                        zIndex: '-1',
+                                        mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)', // Mask the inner area
+                                        WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)', // For Safari
+                                        maskComposite: 'exclude', // Exclude the inner area
+                                        WebkitMaskComposite: 'xor', // For Safari
+                                        padding: '2px', // Border thickness
+                                    }}
+                                ></div>
+
                                 {/* Content for the regenerated section */}
-                                <p>Regenerated content goes here...</p>
+                                <div className='pt-[22px] px-[30px] space-y-[31px]'>
+                                    <div className='flex justify-between items-center'>
+                                        <h1 className='text-[9.9px] font-canvasans'>Dear Naeem</h1>
+                                        <div>
+                                            <svg width="0" height="0">
+                                                <defs>
+                                                    <radialGradient id="gradient" cx="0%" cy="0%" r="100%" fx="0%" fy="0%">
+                                                        <stop offset="0%" style={{ stopColor: '#5170ff' }} />
+                                                        <stop offset="100%" style={{ stopColor: '#d83bff' }} />
+                                                    </radialGradient>
+                                                </defs>
+                                            </svg>
+                                            <span
+                                                className="inset-y-0 grid place-content-center h-[26.4px] w-[26.4px] rounded-full cursor-pointer"
+                                            >
+                                                <RiSparklingFill style={{ fill: 'url(#gradient)' }} />
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div className='space-y-[22px]'>
+                                        <h1 className='text-[9.9px] font-canvasans'>Our practice allows partial medical aid payment only. This means that you can use your accepted medical aid to partially cover the charge, usually around 70% of the total charge.</h1>
+                                        <h1 className='text-[9.9px] font-canvasans'>Accept medical aid schemes include Discovery Health, Momnetum, Bonitas and Out Surance.</h1>
+                                        <h1 className='text-[9.9px] font-canvasans'>Please feel free to get in touch if you have any further questions.</h1>
+                                    </div>
+                                    <div className='flex flex-col'>
+                                        <h1 className='text-[9.9px] font-canvasans'>Kind Regards</h1>
+                                        <h1 className='text-[9.9px] font-canvasans'>Dr. A Parkar</h1>
+                                    </div>
+                                </div>
                             </div>
                         )}
 
