@@ -203,6 +203,41 @@ const Bookings = () => {
                             </button>
                         </div>
                     </div>
+
+                    {/* Days name of week */}
+                    <div className="pt-[63px] pl-[48px] flex items-center gap-[9px]">
+                        <div className="w-[107.4px] h-[74.2px] rounded-[15px] bg-white flex flex-col items-center justify-center -space-y-2">
+                            <h1 className="text-gray-500 text-[10.6px] font-montserrat">Wed</h1>
+                            <h1 className="text-[19px] font-canvasans font-bold">01</h1>
+                        </div>
+                        <div className="w-[107.4px] h-[74.2px] rounded-[15px]  flex flex-col items-center justify-center -space-y-2" style={{
+                            background: 'radial-gradient(circle at 0% 0%, #5170ff, #d83bff)',
+                        }}>
+                            <h1 className="text-gray-200 text-[10.6px] font-montserrat">Wed</h1>
+                            <h1 className="text-[19px] font-canvasans font-bold">01</h1>
+                        </div>
+                        <div className="w-[107.4px] h-[74.2px] rounded-[15px] bg-white flex flex-col items-center justify-center -space-y-2">
+                            <h1 className="text-gray-500 text-[10.6px] font-montserrat">Wed</h1>
+                            <h1 className="text-[19px] font-canvasans font-bold">01</h1>
+                        </div>
+                        <div className="w-[107.4px] h-[74.2px] rounded-[15px] bg-white flex flex-col items-center justify-center -space-y-2">
+                            <h1 className="text-gray-500 text-[10.6px] font-montserrat">Wed</h1>
+                            <h1 className="text-[19px] font-canvasans font-bold">01</h1>
+                        </div>
+                        <div className="w-[107.4px] h-[74.2px] rounded-[15px] bg-white flex flex-col items-center justify-center -space-y-2">
+                            <h1 className="text-gray-500 text-[10.6px] font-montserrat">Wed</h1>
+                            <h1 className="text-[19px] font-canvasans font-bold">01</h1>
+                        </div>
+                        <div className="w-[107.4px] h-[74.2px] rounded-[15px] bg-white flex flex-col items-center justify-center -space-y-2">
+                            <h1 className="text-gray-500 text-[10.6px] font-montserrat">Wed</h1>
+                            <h1 className="text-[19px] font-canvasans font-bold">01</h1>
+                        </div>
+                        <div className="w-[107.4px] h-[74.2px] rounded-[15px] bg-white flex flex-col items-center justify-center -space-y-2">
+                            <h1 className="text-gray-500 text-[10.6px] font-montserrat">Wed</h1>
+                            <h1 className="text-[19px] font-canvasans font-bold">01</h1>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
