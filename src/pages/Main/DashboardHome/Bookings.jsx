@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { RiSparklingFill } from "react-icons/ri";
 
 const Bookings = () => {
     const [currentDate, setCurrentDate] = useState(new Date());
@@ -143,12 +144,35 @@ const Bookings = () => {
                         </label>
                     </div>
                 </div>
-                <div className="w-[270.8px] h-[168.9px] rounded-[25px] bg-[#f1f1f1]"
+                <div className="w-[270.8px] h-[168.9px] rounded-[25px]"
                     style={{
                         background: 'radial-gradient(circle at 0% 0%, #5170ff, #d83bff)',
                     }}
                 >
-
+                    <div className="flex items-center pt-[17px] pl-[19px] gap-[6px]">
+                        <RiSparklingFill className="text-[9px] text-white" />
+                        <h1 className="font-canvasans text-[9px] text-white">Quick Actions</h1>
+                    </div>
+                    <div className="flex flex-wrap gap-x-[5px] gap-y-[13px] pl-[16px] pt-[16px]">
+                        <div className="bg-[rgba(250,250,250,0.5)] h-[16.6px] w-[100.8px] font-montserrat text-[4.6px] rounded-[38px] flex items-center justify-center text-white">
+                            Earliest available appointment
+                        </div>
+                        <div className="bg-[rgba(250,250,250,0.5)] h-[16.6px] w-[100.8px] font-montserrat text-[4.6px] rounded-[38px] flex items-center justify-center text-white">
+                            Next appointment details
+                        </div>
+                        <div className="bg-[rgba(250,250,250,0.5)] h-[16.6px] w-[100.8px] font-montserrat text-[4.6px] rounded-[38px] flex items-center justify-center text-white">
+                            Cancel next appointment
+                        </div>
+                        <div className="bg-[rgba(250,250,250,0.5)] h-[16.6px] w-[100.8px] font-montserrat text-[4.6px] rounded-[38px] flex items-center justify-center text-white">
+                            Earliest available appointment
+                        </div>
+                        <div className="bg-[rgba(250,250,250,0.5)] h-[16.6px] w-[100.8px] font-montserrat text-[4.6px] rounded-[38px] flex items-center justify-center text-white">
+                            Next appointment details
+                        </div>
+                        <div className="bg-[rgba(250,250,250,0.5)] h-[16.6px] w-[100.8px] font-montserrat text-[4.6px] rounded-[38px] flex items-center justify-center text-white">
+                            Cancel next appointment
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className="w-3/4">
