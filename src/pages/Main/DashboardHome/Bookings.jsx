@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight, FaPlus } from "react-icons/fa";
 import { RiSparklingFill } from "react-icons/ri";
+import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 
 const Bookings = () => {
     const [currentDate, setCurrentDate] = useState(new Date());
@@ -80,6 +81,7 @@ const Bookings = () => {
     };
     return (
         <div className="flex h-screen">
+            {/* Left side */}
             <div className="w-1/4 space-y-[10px]">
                 <div className="w-[270.8px] h-[265.7px] rounded-[25px] bg-[#f1f1f1] p-4">
                     {/* Month Changer Slider */}
@@ -175,9 +177,32 @@ const Bookings = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Right side */}
             <div className="w-3/4">
                 <div className="w-[866.8px] h-[645.9px] rounded-[25px] bg-[#f1f1f1]">
+                    <div className="flex justify-between pt-[23px] px-[29px]">
+                        <div className="flex items-center gap-[13px]">
+                            <h1 className="text-[20px] font-canvasans font-bold">Janurary 2025</h1>
+                            <div className="flex items-center">
+                                <SlArrowLeft size={13} />
+                                <SlArrowRight size={13} />
+                            </div>
+                        </div>
 
+                        {/* Filters of day and dates */}
+                        <div className="flex items-center h-[28.6px] font-gordita gap-[15px]">
+                            <div className="flex items-center">
+                                <button className="text-[6.1px] bg-white px-[10px] py-[10px] rounded-md w-[87.7px] h-[28px]">Day</button>
+                                <button className="text-[6.1px] bg-black text-white px-[10px] py-[10px] rounded-md w-[87.7px] h-[28px]">Day</button>
+                                <button className="text-[6.1px] bg-white px-[10px] py-[10px] rounded-md w-[87.7px] h-[28px]">Day</button>
+                            </div>
+                            <button className="w-[106.6px] h-[28.6px] bg-black text-white rounded-[5px] flex gap-1 items-center justify-center">
+                                <FaPlus className="text-white text-[7.3px]" />
+                                <h1 className="font-gordita text-[7.3px]">Add to list</h1>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
