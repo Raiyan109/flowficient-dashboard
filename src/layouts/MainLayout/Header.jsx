@@ -36,15 +36,17 @@ const Header = () => {
                     <span className="absolute inset-y-0 start-1 grid w-10 place-content-center" onClick={toggleFlowkiAi}>
                         <img src={spark} alt="" />
                     </span>
-                    <input
-                        type="text"
-                        id="Search"
-                        placeholder="What would you like to do?"
-                        className="w-[636.5px] h-[53.5px] rounded-md bg-transparent border-none outline-none pl-12 placeholder:text-white placeholder:font-canvasans placeholder:text-[13px] text-white font-canvasans focus:bg-gradient-to-r focus:from-[#5170ff] focus:to-[#d83bff]"
-                        onClick={() => {
-                            setShowSearchHistory(!showSearchHistory)
-                        }}
-                    />
+                    <div className='relative'>
+                        <input
+                            type="text"
+                            id="Search"
+                            placeholder="What would you like to do?"
+                            className="w-[636.5px] h-[53.5px] rounded-md bg-transparent border-none outline-none pl-12 placeholder:text-white placeholder:font-canvasans placeholder:text-[13px] text-white font-canvasans focus:bg-gradient-to-r focus:from-[#5170ff] focus:to-[#d83bff]"
+                            onClick={() => {
+                                setShowSearchHistory(!showSearchHistory)
+                            }}
+                        />
+                    </div>
 
                     <span className="absolute inset-y-0 end-1 grid w-10 place-content-center">
                         <img src={gradientCircle} alt="" />
@@ -53,7 +55,7 @@ const Header = () => {
             </div>
             <div className=''>
                 {showSearchHistory &&
-                    <div className='w-[636.5px] h-[222.9px] bg-white absolute top-20 left-[212px]'>
+                    <div className='w-[636.5px] h-[222.9px] bg-white absolute top-20 left-[212px] z-[100]'>
                         <div>
                             <div className='flex items-center justify-between  p-[17px]'>
                                 <div className='flex items-center gap-[16px]'>
