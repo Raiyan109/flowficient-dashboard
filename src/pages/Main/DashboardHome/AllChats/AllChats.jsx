@@ -15,6 +15,7 @@ import { FaArrowUp } from 'react-icons/fa';
 import { RiSparklingFill } from "react-icons/ri";
 import { GoPersonFill } from "react-icons/go";
 import { useEffect, useRef, useState } from 'react';
+import ChatAiModal from './ChatAiModal';
 
 const chats = [
     {
@@ -85,6 +86,7 @@ const AllChats = () => {
     const [chatHistory, setChatHistory] = useState([]); // State to store chat history
     const [showInputButton, setShowInputButton] = useState(false)
     const [showRegeneratedSection, setShowRegeneratedSection] = useState(false)
+    const [showChatAi, setShowChatAi] = useState(false);
     const inputRef = useRef(null);
     const regenerateButtonRef = useRef(null);
 
@@ -141,6 +143,10 @@ const AllChats = () => {
         console.log('clicked in reg');
 
         setShowRegeneratedSection(!showRegeneratedSection); // Expand the input
+    };
+
+    const toggleChatAi = () => {
+        setShowChatAi(!showChatAi);
     };
     return (
         <div>
@@ -323,7 +329,7 @@ const AllChats = () => {
                                 </button>
                                 <div className='flex items-center gap-[12px]'>
                                     <GiElectric className='text-[#757575]' />
-                                    <RiSparklingFill className='text-[#757575]' />
+                                    <RiSparklingFill className='text-[#757575]' onClick={toggleChatAi} />
                                 </div>
                             </div>
                         </div>
@@ -525,7 +531,16 @@ const AllChats = () => {
                     </div>
                 </div>
             </div>
-        </div >
+
+            {/* Chat AI Modal */}
+            {
+                showChatAi && (
+                    <div className="fixed inset-0 bg-gray-100 bg-opacity-30"> {/* Light grayish overlay */}
+                        <ChatAiModal toggleChatAi={toggleChatAi} />
+                    </div>
+                )
+            }
+        </div>
     )
 }
 
