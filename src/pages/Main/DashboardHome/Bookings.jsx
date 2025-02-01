@@ -13,6 +13,7 @@ const Bookings = () => {
         professional: false,
     });
     const [showSetAppointment, setShowSetAppointment] = useState(false)
+    const [selectedView, setSelectedView] = useState("Week");
 
     const handleCheckboxChange = (event) => {
         const { name, checked } = event.target;
@@ -93,6 +94,10 @@ const Bookings = () => {
         }
     };
 
+    // Handle Updating the selectedView state
+    const handleViewChange = (view) => {
+        setSelectedView(view);
+    };
 
     return (
         <div className="flex h-screen">
@@ -209,9 +214,27 @@ const Bookings = () => {
                         {/* Filters of day and dates */}
                         <div className="flex items-center h-[28.6px] font-gordita gap-[15px]">
                             <div className="flex items-center">
-                                <button className="text-[6.1px] bg-white px-[10px] py-[10px] rounded-md w-[87.7px] h-[28px]">Day</button>
-                                <button className="text-[6.1px] bg-black text-white px-[10px] py-[10px] rounded-md w-[87.7px] h-[28px]">Week</button>
-                                <button className="text-[6.1px] bg-white px-[10px] py-[10px] rounded-md w-[87.7px] h-[28px]">Month</button>
+                                <button
+                                    onClick={() => handleViewChange("Day")}
+                                    className={`text-[6.1px] px-[10px] py-[10px] rounded-md w-[87.7px] h-[28px] ${selectedView === "Day" ? "bg-black text-white" : "bg-white text-black"
+                                        }`}
+                                >
+                                    Day
+                                </button>
+                                <button
+                                    onClick={() => handleViewChange("Week")}
+                                    className={`text-[6.1px] px-[10px] py-[10px] rounded-md w-[87.7px] h-[28px] ${selectedView === "Week" ? "bg-black text-white" : "bg-white text-black"
+                                        }`}
+                                >
+                                    Week
+                                </button>
+                                <button
+                                    onClick={() => handleViewChange("Month")}
+                                    className={`text-[6.1px] px-[10px] py-[10px] rounded-md w-[87.7px] h-[28px] ${selectedView === "Month" ? "bg-black text-white" : "bg-white text-black"
+                                        }`}
+                                >
+                                    Month
+                                </button>
                             </div>
                             <button className="w-[106.6px] h-[28.6px] bg-black text-white rounded-[5px] flex gap-1 items-center justify-center" onClick={toggleSetAppointmentsModal}>
                                 <FaPlus className="text-white text-[7.3px]" />
@@ -256,37 +279,60 @@ const Bookings = () => {
                     </div>
 
                     {/* Events ================= */}
-                    <div className="w-[866.8px] h-[440.1px] rounded-[25px] bg-white mt-[13px]">
-                        <div className="pt-[55px] relative">
-                            <div className=" pl-[3px] flex items-center gap-[5px] ">
-                                <h3 className="text-[#515151] text-[8.6px]">8 am</h3>
+                    {/* Render the selected view */}
+                    {selectedView === "Day" && (
+                        <div className="p-4">
+                            <h2 className="text-[16px] font-bold">Day View</h2>
+                            {/* Add your Day view implementation here */}
+                        </div>
+                    )}
+                    {selectedView === "Month" && (
+                        <div className="p-4">
+                            <h2 className="text-[16px] font-bold">Month View</h2>
+                            {/* Add your Month view implementation here */}
+                            <div className="grid grid-cols-7 gap-1">
+                                {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
+                                    <div key={day} className="text-center text-[7.4px] font-canvasans">
+                                        {day}
+                                    </div>
+                                ))}
+                                {renderCalendar()}
+                            </div>
+                        </div>
+                    )}
+                    {selectedView === 'Week' && (
+                        <div className="w-[866.8px] h-[440.1px] rounded-[25px] bg-white mt-[13px]">
+                            <div className="pt-[55px] relative">
+                                <div className=" pl-[3px] flex items-center gap-[5px] ">
+                                    <h3 className="text-[#515151] text-[8.6px]">8 am</h3>
+                                    <div className="border-b border-[#b9b7b7] flex-grow h-[1px]"></div>
+                                </div>
+                                <div className="bg-[#8c52ff] rounded-[25px] w-[107.4px] h-[72.5px] absolute top-16 left-7">
+                                    <h1 className="text-white text-[5.6px] font-montserrat pt-[7px] pl-[9px]">Naeem Hashim</h1>
+                                    <div className="w-[39.7px] h-[8px] bg-[rgba(250,250,250,0.5)] text-[3.3px] text-white font-montserrat flex items-center justify-center rounded-[38px] ml-[9px] mt-[3px]">
+                                        Checkup
+                                    </div>
+                                    <h1 className="text-[3.6px] text-white absolute bottom-[19px] pl-[9px]">8 am  - 9 am   <span className="font-bold">Pinelands</span></h1>
+                                </div>
+                            </div>
+                            <div className="pt-[66px] pl-[3px] flex items-center gap-[5px]">
+                                <h3 className="text-[#515151] text-[8.6px]">9 am</h3>
                                 <div className="border-b border-[#b9b7b7] flex-grow h-[1px]"></div>
                             </div>
-                            <div className="bg-[#8c52ff] rounded-[25px] w-[107.4px] h-[72.5px] absolute top-16 left-7">
-                                <h1 className="text-white text-[5.6px] font-montserrat pt-[7px] pl-[9px]">Naeem Hashim</h1>
-                                <div className="w-[39.7px] h-[8px] bg-[rgba(250,250,250,0.5)] text-[3.3px] text-white font-montserrat flex items-center justify-center rounded-[38px] ml-[9px] mt-[3px]">
-                                    Checkup
-                                </div>
-                                <h1 className="text-[3.6px] text-white absolute bottom-[19px] pl-[9px]">8 am  - 9 am   <span className="font-bold">Pinelands</span></h1>
+                            <div className="pt-[66px] pl-[3px] flex items-center gap-[5px]">
+                                <h3 className="text-[#515151] text-[8.6px]">10 am</h3>
+                                <div className="border-b border-[#b9b7b7] flex-grow h-[1px]"></div>
+                            </div>
+                            <div className="pt-[66px] pl-[3px] flex items-center gap-[5px]">
+                                <h3 className="text-[#515151] text-[8.6px]">11 am</h3>
+                                <div className="border-b border-[#b9b7b7] flex-grow h-[1px]"></div>
+                            </div>
+                            <div className="pt-[66px] pl-[3px] flex items-center gap-[5px]">
+                                <h3 className="text-[#515151] text-[8.6px]">12 am</h3>
+                                <div className="border-b border-[#b9b7b7] flex-grow h-[1px]"></div>
                             </div>
                         </div>
-                        <div className="pt-[66px] pl-[3px] flex items-center gap-[5px]">
-                            <h3 className="text-[#515151] text-[8.6px]">9 am</h3>
-                            <div className="border-b border-[#b9b7b7] flex-grow h-[1px]"></div>
-                        </div>
-                        <div className="pt-[66px] pl-[3px] flex items-center gap-[5px]">
-                            <h3 className="text-[#515151] text-[8.6px]">10 am</h3>
-                            <div className="border-b border-[#b9b7b7] flex-grow h-[1px]"></div>
-                        </div>
-                        <div className="pt-[66px] pl-[3px] flex items-center gap-[5px]">
-                            <h3 className="text-[#515151] text-[8.6px]">11 am</h3>
-                            <div className="border-b border-[#b9b7b7] flex-grow h-[1px]"></div>
-                        </div>
-                        <div className="pt-[66px] pl-[3px] flex items-center gap-[5px]">
-                            <h3 className="text-[#515151] text-[8.6px]">12 am</h3>
-                            <div className="border-b border-[#b9b7b7] flex-grow h-[1px]"></div>
-                        </div>
-                    </div>
+                    )}
                 </div>
             </div>
 
