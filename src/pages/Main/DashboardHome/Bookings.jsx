@@ -283,8 +283,8 @@ const Bookings = () => {
                                 <div
                                     key={index}
                                     className={`w-[107.4px] h-[74.2px] rounded-[15px] flex flex-col items-center justify-center -space-y-2 ${isSelected
-                                            ? "bg-gradient-to-br from-[#5170ff] to-[#d83bff]"
-                                            : "bg-white"
+                                        ? "bg-gradient-to-br from-[#5170ff] to-[#d83bff]"
+                                        : "bg-white"
                                         }`}
                                 >
                                     <h1
@@ -366,7 +366,7 @@ const Bookings = () => {
                                     <h3 className="text-[#515151] text-[8.6px]">8 am</h3>
                                     <div className="border-b border-[#b9b7b7] flex-grow h-[1px]"></div>
                                 </div>
-                                <div className="bg-[#8c52ff] rounded-[25px] w-[107.4px] h-[72.5px] absolute top-16 left-7">
+                                <div className="bg-[#8c52ff] rounded-[10px] w-[107.4px] h-[72.5px] absolute top-16 left-7">
                                     <h1 className="text-white text-[5.6px] font-montserrat pt-[7px] pl-[9px]">Naeem Hashim</h1>
                                     <div className="w-[39.7px] h-[8px] bg-[rgba(250,250,250,0.5)] text-[3.3px] text-white font-montserrat flex items-center justify-center rounded-[38px] ml-[9px] mt-[3px]">
                                         Checkup

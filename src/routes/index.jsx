@@ -10,6 +10,7 @@ import OTP from "../pages/Auth/OTP";
 import UserDetailsUpdate from "../pages/Auth/UserDetailsUpdate";
 import { routesGenerators } from "../utils/routesGenerators";
 import { dashboardItems } from "../constants/router.constants";
+import PatientBookingLayout from "../layouts/PatientBookingLayout/PatientBookingLayout";
 
 
 const router = createBrowserRouter([
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
         path: "/",
         element: <Main />,
         children: routesGenerators(dashboardItems),
+    },
+    {
+        path: "/patient",
+        element: <PatientBookingLayout />,
     },
     //   {
     //     path: "/support-chat",
