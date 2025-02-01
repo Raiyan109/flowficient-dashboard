@@ -4,6 +4,23 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 const Bookings = () => {
     const [currentDate, setCurrentDate] = useState(new Date());
     const [selectedDate, setSelectedDate] = useState(null);
+    const [selectedOption, setSelectedOption] = useState('');
+    const [checked, setChecked] = useState({
+        practice: false,
+        professional: false,
+    });
+
+    const handleCheckboxChange = (event) => {
+        const { name, checked } = event.target;
+        setChecked((prevState) => ({
+            ...prevState,
+            [name]: checked,
+        }));
+    };
+
+    const handleChange = (event) => {
+        setSelectedOption(event.target.value);
+    };
 
     const handlePrevMonth = () => {
         setCurrentDate(prevDate => {
@@ -88,7 +105,43 @@ const Bookings = () => {
                     </div>
                 </div>
                 <div className="w-[270.8px] h-[190.9px] rounded-[25px] bg-[#f1f1f1]">
+                    <h1 className="text-[13px] pt-[29px] pl-[16px] font-canvasans font-bold pb-[23px]">Calendar</h1>
+                    <div className="flex flex-col pl-[16px] gap-[15px]">
+                        {/* Practice Checkbox */}
+                        <label className="flex items-center space-x-2">
+                            <input
+                                type="checkbox"
+                                name="practice"
+                                checked={checked.practice}
+                                onChange={handleCheckboxChange}
+                                className="w-[15.9px] h-[15.9px] accent-[#8c52ff] rounded"
+                            />
+                            <span className="text-[#3f3f3f] font-canvasans text-[10.7px]">Dr. A Parkar</span>
+                        </label>
 
+                        {/* Professional Checkbox */}
+                        <label className="flex items-center space-x-2">
+                            <input
+                                type="checkbox"
+                                name="practice"
+                                checked={checked.practice}
+                                onChange={handleCheckboxChange}
+                                className="w-[15.9px] h-[15.9px] accent-[#8c52ff] rounded"
+                            />
+                            <span className="text-[#3f3f3f] font-canvasans text-[10.7px]">Dr. B Abrahams</span>
+                        </label>
+
+                        <label className="flex items-center space-x-2">
+                            <input
+                                type="checkbox"
+                                name="practice"
+                                checked={checked.practice}
+                                onChange={handleCheckboxChange}
+                                className="w-[15.9px] h-[15.9px] accent-[#8c52ff] rounded"
+                            />
+                            <span className="text-[#3f3f3f] font-canvasans text-[10.7px]">Dr. D Henkings</span>
+                        </label>
+                    </div>
                 </div>
                 <div className="w-[270.8px] h-[168.9px] rounded-[25px] bg-[#f1f1f1]"
                     style={{
