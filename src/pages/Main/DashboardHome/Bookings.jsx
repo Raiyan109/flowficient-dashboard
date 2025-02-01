@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FaChevronLeft, FaChevronRight, FaPlus } from "react-icons/fa";
 import { RiSparklingFill } from "react-icons/ri";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
+import SetAppointmentModal from "./SetAppointmentModal";
 
 const Bookings = () => {
     const [currentDate, setCurrentDate] = useState(new Date());
@@ -11,6 +12,7 @@ const Bookings = () => {
         practice: false,
         professional: false,
     });
+    const [showSetAppointment, setShowSetAppointment] = useState(false)
 
     const handleCheckboxChange = (event) => {
         const { name, checked } = event.target;
@@ -79,6 +81,19 @@ const Bookings = () => {
 
         return calendarDays;
     };
+
+    const toggleSetAppointmentsModal = () => {
+        setShowSetAppointment(!showSetAppointment)
+    }
+
+    // Function to handle click outside the modal
+    const handleOverlayClick = (e) => {
+        if (e.target === e.currentTarget) {
+            toggleSetAppointmentsModal();
+        }
+    };
+
+
     return (
         <div className="flex h-screen">
             {/* Left side */}
@@ -198,9 +213,9 @@ const Bookings = () => {
                                 <button className="text-[6.1px] bg-black text-white px-[10px] py-[10px] rounded-md w-[87.7px] h-[28px]">Week</button>
                                 <button className="text-[6.1px] bg-white px-[10px] py-[10px] rounded-md w-[87.7px] h-[28px]">Month</button>
                             </div>
-                            <button className="w-[106.6px] h-[28.6px] bg-black text-white rounded-[5px] flex gap-1 items-center justify-center">
+                            <button className="w-[106.6px] h-[28.6px] bg-black text-white rounded-[5px] flex gap-1 items-center justify-center" onClick={toggleSetAppointmentsModal}>
                                 <FaPlus className="text-white text-[7.3px]" />
-                                <h1 className="font-gordita text-[7.3px]">Add to list</h1>
+                                <h1 className="font-gordita text-[7.3px]">Add task</h1>
                             </button>
                         </div>
                     </div>
@@ -274,6 +289,18 @@ const Bookings = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Set Appointment Modal */}
+            {showSetAppointment && (
+                <div
+                    className="fixed inset-0 bg-gray-100 bg-opacity-30"
+                    onClick={handleOverlayClick} // Add the overlay click handler here
+                >
+                    <SetAppointmentModal
+                        toggleSetAppointmentsModal={toggleSetAppointmentsModal}
+                    />
+                </div>
+            )}
         </div>
     );
 };
