@@ -199,7 +199,7 @@ const Bookings = () => {
                     {/* Upper filters and Month name === */}
                     <div className="flex justify-between pt-[23px] px-[29px]">
                         <div className="flex items-center gap-[13px]">
-                            <h1 className="text-[20px] font-canvasans font-bold">Janurary 2025</h1>
+                            <h1 className="text-[20px] font-canvasans font-bold">{currentDate.toLocaleString("default", { month: "long", year: "numeric" })}</h1>
                             <div className="flex items-center">
                                 <SlArrowLeft size={13} />
                                 <SlArrowRight size={13} />
