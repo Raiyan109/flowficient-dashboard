@@ -181,6 +181,7 @@ const Bookings = () => {
             {/* Right side */}
             <div className="w-3/4">
                 <div className="w-[866.8px] h-[645.9px] rounded-[25px] bg-[#f1f1f1]">
+                    {/* Upper filters and Month name === */}
                     <div className="flex justify-between pt-[23px] px-[29px]">
                         <div className="flex items-center gap-[13px]">
                             <h1 className="text-[20px] font-canvasans font-bold">Janurary 2025</h1>
@@ -194,8 +195,8 @@ const Bookings = () => {
                         <div className="flex items-center h-[28.6px] font-gordita gap-[15px]">
                             <div className="flex items-center">
                                 <button className="text-[6.1px] bg-white px-[10px] py-[10px] rounded-md w-[87.7px] h-[28px]">Day</button>
-                                <button className="text-[6.1px] bg-black text-white px-[10px] py-[10px] rounded-md w-[87.7px] h-[28px]">Day</button>
-                                <button className="text-[6.1px] bg-white px-[10px] py-[10px] rounded-md w-[87.7px] h-[28px]">Day</button>
+                                <button className="text-[6.1px] bg-black text-white px-[10px] py-[10px] rounded-md w-[87.7px] h-[28px]">Week</button>
+                                <button className="text-[6.1px] bg-white px-[10px] py-[10px] rounded-md w-[87.7px] h-[28px]">Month</button>
                             </div>
                             <button className="w-[106.6px] h-[28.6px] bg-black text-white rounded-[5px] flex gap-1 items-center justify-center">
                                 <FaPlus className="text-white text-[7.3px]" />
@@ -204,7 +205,7 @@ const Bookings = () => {
                         </div>
                     </div>
 
-                    {/* Days name of week */}
+                    {/* Days name of week=========== */}
                     <div className="pt-[63px] pl-[48px] flex items-center gap-[9px]">
                         <div className="w-[107.4px] h-[74.2px] rounded-[15px] bg-white flex flex-col items-center justify-center -space-y-2">
                             <h1 className="text-gray-500 text-[10.6px] font-montserrat">Wed</h1>
@@ -237,6 +238,39 @@ const Bookings = () => {
                             <h1 className="text-[19px] font-canvasans font-bold">01</h1>
                         </div>
 
+                    </div>
+
+                    {/* Events ================= */}
+                    <div className="w-[866.8px] h-[440.1px] rounded-[25px] bg-white mt-[13px]">
+                        <div className="pt-[55px] relative">
+                            <div className=" pl-[3px] flex items-center gap-[5px] ">
+                                <h3 className="text-[#515151] text-[8.6px]">8 am</h3>
+                                <div className="border-b border-[#b9b7b7] flex-grow h-[1px]"></div>
+                            </div>
+                            <div className="bg-[#8c52ff] rounded-[25px] w-[107.4px] h-[72.5px] absolute top-16 left-7">
+                                <h1 className="text-white text-[5.6px] font-montserrat pt-[7px] pl-[9px]">Naeem Hashim</h1>
+                                <div className="w-[39.7px] h-[8px] bg-[rgba(250,250,250,0.5)] text-[3.3px] text-white font-montserrat flex items-center justify-center rounded-[38px] ml-[9px] mt-[3px]">
+                                    Checkup
+                                </div>
+                                <h1 className="text-[3.6px] text-white absolute bottom-[19px] pl-[9px]">8 am  - 9 am   <span className="font-bold">Pinelands</span></h1>
+                            </div>
+                        </div>
+                        <div className="pt-[66px] pl-[3px] flex items-center gap-[5px]">
+                            <h3 className="text-[#515151] text-[8.6px]">9 am</h3>
+                            <div className="border-b border-[#b9b7b7] flex-grow h-[1px]"></div>
+                        </div>
+                        <div className="pt-[66px] pl-[3px] flex items-center gap-[5px]">
+                            <h3 className="text-[#515151] text-[8.6px]">10 am</h3>
+                            <div className="border-b border-[#b9b7b7] flex-grow h-[1px]"></div>
+                        </div>
+                        <div className="pt-[66px] pl-[3px] flex items-center gap-[5px]">
+                            <h3 className="text-[#515151] text-[8.6px]">11 am</h3>
+                            <div className="border-b border-[#b9b7b7] flex-grow h-[1px]"></div>
+                        </div>
+                        <div className="pt-[66px] pl-[3px] flex items-center gap-[5px]">
+                            <h3 className="text-[#515151] text-[8.6px]">12 am</h3>
+                            <div className="border-b border-[#b9b7b7] flex-grow h-[1px]"></div>
+                        </div>
                     </div>
                 </div>
             </div>
