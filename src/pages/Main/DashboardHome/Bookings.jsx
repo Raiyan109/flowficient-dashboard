@@ -49,6 +49,7 @@ const Bookings = () => {
         setSelectedDate(newDate);
     };
 
+    // ===============FUNCTION==================
     const renderCalendar = () => {
         const year = currentDate.getFullYear();
         const month = currentDate.getMonth();
@@ -99,6 +100,34 @@ const Bookings = () => {
         setSelectedView(view);
     };
 
+
+    // Functions for generating Weeks ===============FUNCTION==================
+    const getStartOfWeek = (date) => {
+        const day = date.getDay(); // 0 (Sunday) to 6 (Saturday)
+        const diff = day >= 2 ? date.getDate() - (day - 2) : date.getDate() - (day + 5); // Adjust to start from Tuesday
+        return new Date(date.setDate(diff));
+    };
+
+    const formatDayName = (date) => {
+        return date.toLocaleString("default", { weekday: "short" });
+    };
+
+    const formatDateNumber = (date) => {
+        return date.getDate().toString().padStart(2, "0");
+    };
+
+    const generateWeekDates = (selectedDate) => {
+        const startOfWeek = getStartOfWeek(new Date(selectedDate)); // Start from Tuesday
+        const weekDates = [];
+
+        for (let i = 0; i < 7; i++) {
+            const date = new Date(startOfWeek);
+            date.setDate(startOfWeek.getDate() + i);
+            weekDates.push(date);
+        }
+
+        return weekDates;
+    };
     return (
         <div className="flex h-screen">
             {/* Left side */}
@@ -245,6 +274,36 @@ const Bookings = () => {
 
                     {/* Days name of week=========== */}
                     <div className="pt-[63px] pl-[48px] flex items-center gap-[9px]">
+                        {generateWeekDates(selectedDate || currentDate).map((date, index) => {
+                            const isSelected =
+                                selectedDate &&
+                                date.toDateString() === selectedDate.toDateString();
+
+                            return (
+                                <div
+                                    key={index}
+                                    className={`w-[107.4px] h-[74.2px] rounded-[15px] flex flex-col items-center justify-center -space-y-2 ${isSelected
+                                            ? "bg-gradient-to-br from-[#5170ff] to-[#d83bff]"
+                                            : "bg-white"
+                                        }`}
+                                >
+                                    <h1
+                                        className={`text-[10.6px] font-montserrat ${isSelected ? "text-gray-200" : "text-gray-500"
+                                            }`}
+                                    >
+                                        {formatDayName(date)}
+                                    </h1>
+                                    <h1
+                                        className={`text-[19px] font-canvasans font-bold ${isSelected ? "text-white" : "text-black"
+                                            }`}
+                                    >
+                                        {formatDateNumber(date)}
+                                    </h1>
+                                </div>
+                            );
+                        })}
+                    </div>
+                    {/* <div className="pt-[63px] pl-[48px] flex items-center gap-[9px]">
                         <div className="w-[107.4px] h-[74.2px] rounded-[15px] bg-white flex flex-col items-center justify-center -space-y-2">
                             <h1 className="text-gray-500 text-[10.6px] font-montserrat">Wed</h1>
                             <h1 className="text-[19px] font-canvasans font-bold">01</h1>
@@ -276,7 +335,7 @@ const Bookings = () => {
                             <h1 className="text-[19px] font-canvasans font-bold">01</h1>
                         </div>
 
-                    </div>
+                    </div> */}
 
                     {/* Events ================= */}
                     {/* Render the selected view */}
