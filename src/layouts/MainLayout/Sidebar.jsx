@@ -67,6 +67,14 @@ const Sidebar = () => {
             >
                 <img src={settings} alt="" className='w-[19.3px] h-[17px]' />
             </Link>
+            <Link
+                to='/patient/booking'
+                style={location.pathname === '/patient/booking' ? activeStyle : {}}
+                className='bg-[#f1f1f1] rounded-full p-2 w-[39.1px] h-[39.1px] flex items-center justify-center'
+            >
+                <img src={settings} alt="" className='w-[19.3px] h-[17px]' />
+                Patient Booking
+            </Link>
         </div>
     );
 };

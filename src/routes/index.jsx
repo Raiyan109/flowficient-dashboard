@@ -11,6 +11,7 @@ import UserDetailsUpdate from "../pages/Auth/UserDetailsUpdate";
 import { routesGenerators } from "../utils/routesGenerators";
 import { dashboardItems } from "../constants/router.constants";
 import PatientBookingLayout from "../layouts/PatientBookingLayout/PatientBookingLayout";
+import PatientBookingHome from "../pages/Patient/PatientBookingHome";
 
 
 const router = createBrowserRouter([
@@ -22,6 +23,16 @@ const router = createBrowserRouter([
     {
         path: "/patient",
         element: <PatientBookingLayout />,
+        children: [
+            {
+                path: "/patient",
+                element: <Navigate to={"/patient/booking"} />,
+            },
+            {
+                path: "/patient/booking",
+                element: <PatientBookingHome />,
+            },
+        ]
     },
     //   {
     //     path: "/support-chat",
