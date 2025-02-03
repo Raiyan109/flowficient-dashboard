@@ -6,8 +6,68 @@ import { GoClock } from "react-icons/go";
 import { IoLocationOutline } from "react-icons/io5";
 import { MdOutlineSync } from "react-icons/md";
 import { BiError } from "react-icons/bi";
+import { useState } from "react";
 
 const PatientBookingHome = () => {
+    const [currentDate, setCurrentDate] = useState(new Date());
+    const [selectedDate, setSelectedDate] = useState(null);
+
+    const handlePrevMonth = () => {
+        setCurrentDate(prevDate => {
+            const newDate = new Date(prevDate);
+            newDate.setMonth(newDate.getMonth() - 1);
+            return newDate;
+        });
+    };
+
+    const handleNextMonth = () => {
+        setCurrentDate(prevDate => {
+            const newDate = new Date(prevDate);
+            newDate.setMonth(newDate.getMonth() + 1);
+            return newDate;
+        });
+    };
+
+    const handleDateClick = (day) => {
+        const newDate = new Date(currentDate);
+        newDate.setDate(day);
+        setSelectedDate(newDate);
+    };
+
+    // ===============FUNCTION==================
+    const renderCalendar = () => {
+        const year = currentDate.getFullYear();
+        const month = currentDate.getMonth();
+        const firstDayOfMonth = new Date(year, month, 1);
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+        const startingDay = firstDayOfMonth.getDay();
+
+        const calendarDays = [];
+        for (let i = 0; i < startingDay; i++) {
+            calendarDays.push(<div key={`empty-${i}`} className="w-8 h-8"></div>);
+        }
+
+        for (let day = 1; day <= daysInMonth; day++) {
+            const isSelected =
+                selectedDate &&
+                selectedDate.getDate() === day &&
+                selectedDate.getMonth() === month &&
+                selectedDate.getFullYear() === year;
+
+            calendarDays.push(
+                <div
+                    key={day}
+                    onClick={() => handleDateClick(day)}
+                    className={`w-6 h-6 flex items-center justify-center rounded-md text-[10.7px]  font-canvasans cursor-pointer ${isSelected ? "bg-black text-white" : "text-[#3c3c3c]"
+                        }`}
+                >
+                    {day}
+                </div>
+            );
+        }
+
+        return calendarDays;
+    };
     return (
         <div className="">
             {/* Upper side */}
@@ -65,8 +125,17 @@ const PatientBookingHome = () => {
                             </div>
                         </div>
                     </div>
+                    {/* Calendar */}
                     <div className="w-3/5 bg-pink-400">
-                        dfd
+                        <h1 className="text-[24px] font-bold pt-[36px] pl-[36px] font-canvasans">Select Date</h1>
+                        <div className="grid grid-cols-7 gap-1">
+                            {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map(day => (
+                                <div key={day} className="text-center text-[7.4px] font-canvasans">
+                                    {day}
+                                </div>
+                            ))}
+                            {renderCalendar()}
+                        </div>
                     </div>
                 </div>
                 <div className="w-[414.5px] h-[549px] rounded-[25px] bg-[#fafafa]">
