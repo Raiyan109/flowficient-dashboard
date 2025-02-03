@@ -195,49 +195,51 @@ const PatientBookingHome = () => {
                 </div>
 
                 {/* Right side ( Let's get started) */}
-                <div className="w-[414.5px] h-[549px] rounded-[25px] bg-[rgba(250,250,250,0.8)] font-canvasans">
-                    <h1 className="text-[21px] pt-[22px] pl-[22px]  font-semibold">
-                        Lets Get Started
-                    </h1>
+                <div className="w-[414.5px] h-[549px] rounded-[25px] bg-[rgba(250,250,250,0.8)] font-canvasans flex flex-col justify-between">
+                    <div>
+                        <h1 className="text-[21px] pt-[22px] pl-[22px]  font-semibold">
+                            Lets Get Started
+                        </h1>
 
-                    {/* Inputs */}
-                    <div className="mt-[37px] space-y-[12px] pl-[21px]">
-                        <textarea
-                            type="text"
-                            className="border-none outline-none bg-[#fafafa] rounded-[13px] w-[372.3px] h-[83.5px] px-3 placeholder:text-[12px] placeholder:text-[#000000] pt-[25px] pl-[22px]"
-                            placeholder="Reason for visit?"
-                        />
+                        {/* Inputs */}
+                        <div className="mt-[37px] space-y-[12px] pl-[21px]">
+                            <textarea
+                                type="text"
+                                className="border-none outline-none bg-[#fafafa] rounded-[13px] w-[372.3px] h-[83.5px] px-3 placeholder:text-[12px] placeholder:text-[#000000] pt-[25px] pl-[22px]"
+                                placeholder="Reason for visit?"
+                            />
 
-                        {/* Age */}
-                        <select
-                            value={selectedOption}
-                            onChange={handleChange}
-                            className="border-none outline-none bg-[#fafafa] rounded-[10px] w-[372.3px] h-[61.4px] px-5 text-[12px]"
-                        >
-                            <option value="" disabled>
-                                Age Category
-                            </option>
-                            <option value="option1">Age Category</option>
-                            <option value="option2">Option 2</option>
-                            <option value="option3">Option 3</option>
-                        </select>
+                            {/* Age */}
+                            <select
+                                value={selectedOption}
+                                onChange={handleChange}
+                                className="border-none outline-none bg-[#fafafa] rounded-[10px] w-[372.3px] h-[61.4px] px-5 text-[12px]"
+                            >
+                                <option value="" disabled>
+                                    Age Category
+                                </option>
+                                <option value="option1">Age Category</option>
+                                <option value="option2">Option 2</option>
+                                <option value="option3">Option 3</option>
+                            </select>
 
-                        {/* Location */}
-                        <select
-                            value={selectedOption}
-                            onChange={handleChange}
-                            className="border-none outline-none bg-[#fafafa] rounded-[10px] w-[372.3px] h-[61.4px] px-5 text-[12px]"
-                        >
-                            <option value="" disabled>
-                                Select Location
-                            </option>
-                            <option value="option1">Select Location</option>
-                            <option value="option2">Option 2</option>
-                            <option value="option3">Option 3</option>
-                        </select>
+                            {/* Location */}
+                            <select
+                                value={selectedOption}
+                                onChange={handleChange}
+                                className="border-none outline-none bg-[#fafafa] rounded-[10px] w-[372.3px] h-[61.4px] px-5 text-[12px]"
+                            >
+                                <option value="" disabled>
+                                    Select Location
+                                </option>
+                                <option value="option1">Select Location</option>
+                                <option value="option2">Option 2</option>
+                                <option value="option3">Option 3</option>
+                            </select>
+                        </div>
                     </div>
 
-                    <div className="flex items-center justify-center mt-[20px]">
+                    <div className="flex items-center justify-center mt-[20px] mb-[21px]">
                         <button
                             className="w-[372.3px] h-[47.7px] flex items-center justify-center rounded-[7px] text-[12.5px] text-white"
                             style={{
